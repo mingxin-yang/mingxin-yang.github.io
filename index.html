@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="YangMingxin&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="YangMingxin&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="YangMingxin&#39;s Blog">
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>YangMingxin's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">YangMingxin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+        
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      
+    
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/recyclelistview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang Mingxin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangMingxin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/12/24/recyclelistview/" class="post-title-link" itemprop="url">recyclelistview</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-24 19:16:50" itemprop="dateCreated datePublished" datetime="2019-12-24T19:16:50+08:00">2019-12-24</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+              </span>
+            
+          
+
+          
+            <span id="/2019/12/24/recyclelistview/" class="post-meta-item leancloud_visitors" data-flag-title="recyclelistview" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/24/recyclelistview/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/24/recyclelistview/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>1.2k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="recyclerlistview-的使用"><a href="#recyclerlistview-的使用" class="headerlink" title="recyclerlistview 的使用"></a>recyclerlistview 的使用</h3><p>由 <code>react-native-swipe-list-view</code> 替换成 <code>recyclerlistview</code></p>
+<p><a href="https://github.com/Flipkart/recyclerlistview" target="_blank" rel="noopener">github</a></p>
+<p>性能明显提升，后者可以复用、回收 item</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;RecyclerListView</span><br><span class="line">	layoutProvider=&#123;<span class="keyword">this</span>._layoutProvider&#125;</span><br><span class="line">	dataProvider=&#123;<span class="keyword">this</span>.state.convoData&#125;</span><br><span class="line">	rowRenderer=&#123;<span class="keyword">this</span>._rowRenderer&#125;</span><br><span class="line">	externalScrollView=&#123;ExtendedScrollView&#125;</span><br><span class="line">	onScroll=&#123;()=&gt;&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span>.state.rowOpenIndex != <span class="number">-1</span>)&#123;</span><br><span class="line">			<span class="keyword">this</span>.rows[<span class="keyword">this</span>.state.rowOpenIndex].closeRow()</span><br><span class="line">			<span class="keyword">this</span>.state.rowOpenIndex=<span class="number">-1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;&#125;</span><br><span class="line">	scrollViewProps=&#123;</span><br><span class="line">		&#123;</span><br><span class="line">			header: <span class="keyword">this</span>.renderHeader(),</span><br><span class="line">			scrollEnabled : <span class="keyword">this</span>.state.scrollEnabled,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>layoutProvider : 设置item的宽高</li>
+<li>dataProvider :  数据源</li>
+<li>rowRenderer : item 的 UI</li>
+<li>externalScrollView : 使用自己的 scrollview 替换库中原始的 scrollview (可以在ScrollView 中添加自己的 header )</li>
+<li>onScroll : 滚动监听</li>
+<li>scrollViewProps : scrollView 的参数 (如果使用 externalScrollview, 可以为自己的 Scrollview 设置参数)</li>
+</ol>
+<p><strong>局部刷新的实现</strong></p>
+<p>使用 <code>DataProvider</code> 对数据源添加判断，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dataProvider = <span class="keyword">new</span> DataProvider(<span class="function">(<span class="params">r1, r2</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(r1 === r2)&#123;</span><br><span class="line">    <span class="keyword">return</span> r1.read !== r2.read || r1.lastMessage !== r2.lastMessage || r1.lastTime !== r2.lastTime;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> r1 !== r2;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>添加对数据源具体参数的判断。</p>
+<p><strong>注意在更新数据时，如果想触发局部更新，需要使用深复制</strong> ：例如修改 x 的 read 属性，不能直接 <code>x[index].read = true</code> ，然后 setState 重新渲染，需要 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> item = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(x[index]));</span><br><span class="line">item.read = <span class="literal">true</span>;</span><br><span class="line">x[index] = item;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/13/Decompile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang Mingxin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangMingxin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/07/13/Decompile/" class="post-title-link" itemprop="url">反编译软件初识</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-13 10:48:00" itemprop="dateCreated datePublished" datetime="2019-07-13T10:48:00+08:00">2019-07-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+              </span>
+            
+          
+
+          
+            <span id="/2019/07/13/Decompile/" class="post-meta-item leancloud_visitors" data-flag-title="反编译软件初识" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/07/13/Decompile/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/Decompile/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>327</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="入坑原因"><a href="#入坑原因" class="headerlink" title="入坑原因"></a>入坑原因</h1><p>在 Mac 上使用 Tower Git 管理软件挺好用，想在自己的 Windows 上安装使用一下，但是并没有找到破解版本，试用版怎么可以忍受，然后在52上发现一篇文章，介绍如何破解，so~ 开始了简单的破解之路。</p>
+<h1 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h1><ol>
+<li>de4dot<a href="https://github.com/0xd4d/de4dot/releases" target="_blank" rel="noopener">下载地址</a></li>
+<li>.NET Reflector（包含Reflexil插件）<a href="https://www.jb51.net/softs/629309.html#downintro2" target="_blank" rel="noopener">下载地址</a><a href="http://reflexil.net/" target="_blank" rel="noopener">插件地址</a></li>
+</ol>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
+<li><p>首先在<a href="https://www.git-tower.com/download/windows" target="_blank" rel="noopener">官网</a>下载最新版的Tower，我使用的是2.3.2版本。</p>
+</li>
+<li><p>下载所需要的软件</p>
+</li>
+<li><p>进入de4dot的下载目录，运行如下命令</p>
+<blockquote>
+<p>de4dot.exe tower.exe所在路径</p>
+</blockquote>
+</li>
+<li><p>此时Tower的安装目录中会生成一个Tower.Core.dll文件，将此文件拖入.NET Reflector就可以查看代码，然后按照这个大佬的<a href="https://www.52pojie.cn/thread-720504-1-1.html" target="_blank" rel="noopener">截图</a>使用Reflexil插件修改代码即可。</p>
+</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/AWS搭建服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang Mingxin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangMingxin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/04/14/AWS搭建服务器/" class="post-title-link" itemprop="url">AWS搭建服务器</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-14 10:53:25" itemprop="dateCreated datePublished" datetime="2019-04-14T10:53:25+08:00">2019-04-14</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+              </span>
+            
+          
+
+          
+            <span id="/2019/04/14/AWS搭建服务器/" class="post-meta-item leancloud_visitors" data-flag-title="AWS搭建服务器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/04/14/AWS搭建服务器/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/04/14/AWS搭建服务器/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>283</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>1 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="需知"><a href="#需知" class="headerlink" title="需知"></a>需知</h1><blockquote>
+<ol>
+<li>亚马逊新注册用户可以免费使用一年EC2服务器</li>
+<li>创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。</li>
+</ol>
+</blockquote>
+<h1 id="创建EC2服务器"><a href="#创建EC2服务器" class="headerlink" title="创建EC2服务器"></a>创建EC2服务器</h1><ol>
+<li><p>申请账号登录，需要信用卡信息；</p>
+</li>
+<li><p>选择服务器的地址，可以使用 <a href="https://www.cloudping.info/" target="_blank" rel="noopener">测试网站</a> 观察哪个区域的速度比较快；</p>
+<blockquote>
+<p>国内的话东京的速度要快一些</p>
+</blockquote>
+</li>
+<li><p>点击 service-&gt;EC2 , 创建实例，选择免费的服务器，进行服务器的配置，无脑下一步就好</p>
+</li>
+<li><p>Windows 下载 XShell 连接服务器安装 shadowsocks <a href="https://github.com/Alvin9999/new-pac/wiki/%E8%87%AA%E5%BB%BAss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B" target="_blank" rel="noopener">教程</a></p>
+</li>
+<li><p>配置AWS 安全组入站规则，<strong>自定义 TCP规则</strong> （shadowsocks设置的端口号）来源随便</p>
+</li>
+</ol>
+<p><img src="https://ws1.sinaimg.cn/large/006d1CrTly1g261et5z94j30w607ujs0.jpg" alt></p>
+<ol start="6">
+<li>注意密钥文件不能丢失。</li>
+</ol>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/Android杂记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang Mingxin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YangMingxin's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            
+            <a href="/2019/04/13/Android杂记/" class="post-title-link" itemprop="url">Android杂记</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-13 13:39:27" itemprop="dateCreated datePublished" datetime="2019-04-13T13:39:27+08:00">2019-04-13</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+              </span>
+            
+          
+
+          
+            <span id="/2019/04/13/Android杂记/" class="post-meta-item leancloud_visitors" data-flag-title="Android杂记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/04/13/Android杂记/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/Android杂记/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span>18k</span>
+            </span>
+          
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span>16 分钟</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="拨号界面光标问题主要代码"><a href="#拨号界面光标问题主要代码" class="headerlink" title="拨号界面光标问题主要代码"></a>拨号界面光标问题主要代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TextView text = (TextView) arg1;</span><br><span class="line">Log.v(&quot;NUmber&quot;, text.getText().toString());</span><br><span class="line">int index=editText.getSelectionStart();</span><br><span class="line">Editable edit = editText.getEditableText();//获取EditText的文字</span><br><span class="line">Log.d(TAG, &quot;onItemClick: &quot;+index+&quot; &quot;+edit.length());</span><br><span class="line">if (index &lt; 0 || index &gt;= edit.length() )&#123;</span><br><span class="line">    edit.append(text.getText());</span><br><span class="line">    editText.clearFocus();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    edit.insert(index,text.getText());//光标所在位置插入文字</span><br><span class="line">&#125;</span><br><span class="line">editText.setSelection(index + 1);</span><br></pre></td></tr></table></figure>
+<h3 id="Picasso加载图片到size小的控件中会产生OOM"><a href="#Picasso加载图片到size小的控件中会产生OOM" class="headerlink" title="Picasso加载图片到size小的控件中会产生OOM"></a>Picasso加载图片到size小的控件中会产生OOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Picasso.with(context.getApplicationContext()).load(url)</span><br><span class="line">                .resize(width, height)</span><br><span class="line">                .into(imageView);</span><br><span class="line">或</span><br><span class="line">Picasso.with(context.getApplicationContext()).load(url)</span><br><span class="line">                //从dimen里面取</span><br><span class="line">                .resizeDimen(targetWidthResId, targetHeightResId)</span><br><span class="line">                .into(imageView);</span><br></pre></td></tr></table></figure>
+<h3 id="免责声明页面的dialog"><a href="#免责声明页面的dialog" class="headerlink" title="免责声明页面的dialog"></a>免责声明页面的dialog</h3><p>实现思路：<br>1.sp文件储存 是否不再提醒<br><br>2.判断sp返回的值，如果为true则弹窗<br>3.弹窗点击确定判断是否勾选CheckBox，从而改变sp的值。<br>4.点击取消退出应用。   </p>
+<p>下面是部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">disclaimer = LayoutInflater.from(this).inflate(R.layout.dialog_disclaimer, null);</span><br><span class="line">cb = disclaimer.findViewById(R.id.cb);</span><br><span class="line">textView = disclaimer.findViewById(R.id.disclaimer_tv);</span><br><span class="line">//设置textview可以滚动</span><br><span class="line">textView.setMovementMethod(ScrollingMovementMethod.getInstance());</span><br><span class="line">if (!SharedPreferenceUtil.getIFTTT(this, KEY_DISCLAIMER_TIP, false)) &#123;</span><br><span class="line">    disclaimerDialog = new android.app.AlertDialog.Builder(this)</span><br><span class="line">            .setTitle(R.string.statement)</span><br><span class="line">            .setView(disclaimer)//自定义dialog</span><br><span class="line">            .setOnKeyListener(new DialogInterface.OnKeyListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) &#123;</span><br><span class="line">                    if (event.getKeyCode() == KeyEvent.KEYCODE_SEARCH) &#123;</span><br><span class="line">                        return true;</span><br><span class="line">                    &#125;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)//设置监听返回按钮，此处无用</span><br><span class="line">            .setNegativeButton(this.getResources().getString(R.string.cancel),</span><br><span class="line">                    new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                            AppUtils.exitApp();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">            .setPositiveButton(this.getResources().getString(R.string.sure),</span><br><span class="line">                    new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                            if (cb.isChecked()) &#123;</span><br><span class="line">                                SharedPreferenceUtil.saveIFTTT(MainActivity3.this, KEY_DISCLAIMER_TIP, true);</span><br><span class="line">                            &#125; else &#123;</span><br><span class="line">                                SharedPreferenceUtil.saveIFTTT(MainActivity3.this, KEY_DISCLAIMER_TIP, false);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;).create();</span><br><span class="line">    //设置dialog外面和返回键不能点击</span><br><span class="line">    disclaimerDialog.setCancelable(false);</span><br><span class="line">    disclaimerDialog.show();</span><br><span class="line">    //设置dialog的宽度</span><br><span class="line">    WindowManager.LayoutParams lp = Objects.requireNonNull(disclaimerDialog.getWindow()).getAttributes();</span><br><span class="line">    DisplayMetrics d = this.getResources().getDisplayMetrics();</span><br><span class="line">    lp.width = (int) (d.widthPixels * 0.98);</span><br><span class="line">    disclaimerDialog.getWindow().setAttributes(lp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//可以滚动的TextView设置</span><br><span class="line">&lt;TextView</span><br><span class="line">    android:id=&quot;@+id/disclaimer_tv&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:text=&quot;@string/disclaimer&quot;</span><br><span class="line">    android:padding=&quot;10dp&quot;</span><br><span class="line">    android:textSize=&quot;16sp&quot;</span><br><span class="line">    android:lineSpacingMultiplier=&quot;1.1&quot;</span><br><span class="line">    android:scrollbars=&quot;vertical&quot;</span><br><span class="line">    android:scrollbarStyle=&quot;outsideOverlay&quot;</span><br><span class="line">    android:scrollbarFadeDuration=&quot;2000&quot;</span><br><span class="line">    android:layout_above=&quot;@+id/rl&quot;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="新手引导页"><a href="#新手引导页" class="headerlink" title="新手引导页"></a>新手引导页</h3><p>使用huburt-Hu/NewbieGuide第三方库完成<br><a href="https://github.com/huburt-Hu/NewbieGuide" target="_blank" rel="noopener">地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">if (SharedPreferenceUtil.getIFTTT(this,&quot;isfer&quot;,true)) &#123;</span><br><span class="line">            HighlightOptions options = new HighlightOptions.Builder()</span><br><span class="line">                    .setOnHighlightDrewListener(new OnHighlightDrewListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onHighlightDrew(Canvas canvas, RectF rectF) &#123;</span><br><span class="line">                            Paint paint = new Paint();</span><br><span class="line">                            paint.setColor(Color.WHITE);</span><br><span class="line">                            paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">                            paint.setStrokeWidth(5);</span><br><span class="line">                            paint.setPathEffect(new DashPathEffect(new float[]&#123;20, 20&#125;, 0));</span><br><span class="line">                            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2 + 10, paint);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    .build();</span><br><span class="line">            HighlightOptions optionsRect = new HighlightOptions.Builder()</span><br><span class="line">                    .setOnHighlightDrewListener(new OnHighlightDrewListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onHighlightDrew(Canvas canvas, RectF rectF) &#123;</span><br><span class="line">                            Paint paint = new Paint();</span><br><span class="line">                            paint.setColor(Color.WHITE);</span><br><span class="line">                            paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">                            paint.setStrokeWidth(5);</span><br><span class="line">                            paint.setPathEffect(new DashPathEffect(new float[]&#123;20, 20&#125;, 0));</span><br><span class="line">                            canvas.drawRect(rectF, paint);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    .build();</span><br><span class="line">            Animation enterAnimation = new AlphaAnimation(0f, 1f);</span><br><span class="line">            enterAnimation.setDuration(200);</span><br><span class="line">            enterAnimation.setFillAfter(true);</span><br><span class="line"></span><br><span class="line">            Animation exitAnimation = new AlphaAnimation(1f, 0f);</span><br><span class="line">            exitAnimation.setDuration(200);</span><br><span class="line">            exitAnimation.setFillAfter(true);</span><br><span class="line"></span><br><span class="line">            guideController = NewbieGuide.with(this)</span><br><span class="line">                    .setLabel(&quot;guide&quot;)</span><br><span class="line">                    .setOnPageChangedListener(new OnPageChangedListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onPageChanged(int i) &#123;</span><br><span class="line">                            guidePage =i;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    .setOnGuideChangedListener(new OnGuideChangedListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onShowed(Controller controller) &#123;</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        @Override</span><br><span class="line">                        public void onRemoved(Controller controller) &#123;</span><br><span class="line">                            if (guidePage==4)&#123;</span><br><span class="line">                                SharedPreferenceUtil.saveIFTTT(MainActivity3.this,&quot;isfer&quot;,false);</span><br><span class="line">                                guidePage=5;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                    .setShowCounts(1)</span><br><span class="line">                    .addGuidePage(GuidePage.newInstance()</span><br><span class="line">                            .addHighLightWithOptions(mRlcirclSmile, HighLight.Shape.CIRCLE,0,-50,options)</span><br><span class="line">                            .setLayoutRes(R.layout.guide_osvice)</span><br><span class="line">                            .setEnterAnimation(enterAnimation)</span><br><span class="line">                            .setExitAnimation(exitAnimation))</span><br><span class="line">                    .addGuidePage(GuidePage.newInstance()</span><br><span class="line">                            .addHighLightWithOptions(mMusicBtn, HighLight.Shape.CIRCLE,0,-30,options)</span><br><span class="line">                            .addHighLightWithOptions(mCarsBtn, HighLight.Shape.CIRCLE,0,-30,options)</span><br><span class="line">                            .setLayoutRes(R.layout.guide_music)</span><br><span class="line">                            .setEnterAnimation(enterAnimation)</span><br><span class="line">                            .setExitAnimation(exitAnimation))</span><br><span class="line">                    .addGuidePage(GuidePage.newInstance()</span><br><span class="line">                            .addHighLightWithOptions(mPhoneBtn, HighLight.Shape.CIRCLE,0,-30,options)</span><br><span class="line">                            .addHighLightWithOptions(mAppsBtn, HighLight.Shape.CIRCLE,0,-30,options)</span><br><span class="line">                            .setLayoutRes(R.layout.guide_setting)</span><br><span class="line">                            .setEnterAnimation(enterAnimation)</span><br><span class="line">                            .setExitAnimation(exitAnimation))</span><br><span class="line">                    .addGuidePage(GuidePage.newInstance()</span><br><span class="line">                            .addHighLightWithOptions(mMapBtnWhere, HighLight.Shape.RECTANGLE,0,-40,optionsRect)</span><br><span class="line">                            .setLayoutRes(R.layout.guide_search)</span><br><span class="line">                            .setEnterAnimation(enterAnimation)</span><br><span class="line">                            .setExitAnimation(exitAnimation))</span><br><span class="line">                    .addGuidePage(GuidePage.newInstance()</span><br><span class="line">                            .addHighLightWithOptions(mMapbtnWhere_ho,HighLight.Shape.RECTANGLE,0,-40,optionsRect)</span><br><span class="line">                            .setLayoutRes(R.layout.guide_used)</span><br><span class="line">                            .setEnterAnimation(enterAnimation)</span><br><span class="line">                            .setExitAnimation(exitAnimation))</span><br><span class="line">                    .build();</span><br><span class="line">            if (guidePage==0)&#123;</span><br><span class="line">                guideController.show();</span><br><span class="line">            &#125;else if (guidePage==5)&#123;</span><br><span class="line">                SharedPreferenceUtil.saveIFTTT(this,&quot;isfer&quot;,false);</span><br><span class="line">                guideController.remove();</span><br><span class="line">                guideController=null;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                mMusicBtn.post(new Runnable() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void run() &#123;</span><br><span class="line">                        guideController.showPage(guidePage);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="语音动画"><a href="#语音动画" class="headerlink" title="语音动画"></a>语音动画</h3><ul>
+<li><p>自定义view：绘制渐变色的单个圆角矩形</p>
+<ul>
+<li><p>设置宽高</p>
+<blockquote>
+<p>setMeasuredDimension(LINE_W,getMeasuredHeight());</p>
+</blockquote>
+</li>
+<li>设置view的一些属性，推荐使用typedArray方法<blockquote>
+<p>TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.VoiceView);<br><br>   lineWidth =mTypedArray.getDimension(R.styleable.VoiceView_voiceLineWidth, LINE_W);<br><br>   mTypedArray.recycle();</p>
+</blockquote>
+</li>
+<li><p>attrs_voiceview.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"VoiceView"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"voiceLineColor"</span> <span class="attr">format</span>=<span class="string">"color"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"voiceLineWidth"</span> <span class="attr">format</span>=<span class="string">"dimension"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>绘制渐变圆角矩形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">rectRight.left = widthcentre - lineWidth/2;</span><br><span class="line">rectRight.top = heightcentre - getHeight()/2;</span><br><span class="line">rectRight.right = widthcentre  + lineWidth/2;</span><br><span class="line">rectRight.bottom = heightcentre + getHeight()/2;</span><br><span class="line">//渐变</span><br><span class="line">mShader = new LinearGradient(widthcentre,heightcentre - getHeight()/2,widthcentre,</span><br><span class="line">        heightcentre + getHeight()/2,</span><br><span class="line">        new int[]&#123;0xF200a2ff,0xF2006cff,0xF26852e3&#125;,null,</span><br><span class="line">        Shader.TileMode.CLAMP);</span><br><span class="line">paint.setShader(mShader);</span><br><span class="line">canvas.drawRoundRect(rectRight, 100, 100, paint);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置阴影</p>
+<blockquote>
+<p>paint.setShadowLayer(10,5,5,0xa80013E0);<br> <em>//需要开启硬件加速</em><br> setLayerType(View.LAYER_TYPE_SOFTWARE, null);</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>七个居中分布的view，使用属性动画ValueAnimator对view改变高度，同时使用postDelayed()方法延迟操作旁边的view，从而达到波浪效果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">voiceAnimator4 = ValueAnimator.ofInt(voiceView4.getLayoutParams().height,height,75);</span><br><span class="line">voiceAnimator4.setDuration(600);</span><br><span class="line">voiceAnimator4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onAnimationUpdate(ValueAnimator valueAnimator) &#123;</span><br><span class="line">        //动态改变控件的高度，所以自定义的view的绘制需要依附设定的高度</span><br><span class="line">        voiceView4.getLayoutParams().height= (int)(Integer)valueAnimator.getAnimatedValue();</span><br><span class="line">        voiceView4.requestLayout();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">voiceAnimator4.start();</span><br><span class="line">//延迟150ms对后面的view进行更新</span><br><span class="line">voiceView4.postDelayed(new Runnable() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        voiceAnimator3 = ValueAnimator.ofInt(voiceView3.getLayoutParams().height,height,75);</span><br><span class="line">        voiceAnimator3.setDuration(600);</span><br><span class="line">        voiceAnimator3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onAnimationUpdate(ValueAnimator valueAnimator) &#123;</span><br><span class="line">                voiceView3.getLayoutParams().height= (int) (Integer)valueAnimator.getAnimatedValue();</span><br><span class="line">                voiceView3.requestLayout();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        voiceAnimator5 = ValueAnimator.ofInt(voiceView5.getLayoutParams().height,height,75);</span><br><span class="line">        voiceAnimator5.setDuration(600);</span><br><span class="line">        voiceAnimator5.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onAnimationUpdate(ValueAnimator valueAnimator) &#123;</span><br><span class="line">                voiceView5.getLayoutParams().height= (int) (Integer)valueAnimator.getAnimatedValue();</span><br><span class="line">                voiceView5.requestLayout();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        voiceAnimator3.start();</span><br><span class="line">        voiceAnimator5.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,150);</span><br></pre></td></tr></table></figure>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>一、 开发分支（dev）上的代码达到上线的标准后，要合并到 master 分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br><span class="line">git pull</span><br><span class="line">git checkout master</span><br><span class="line">git merge dev</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p>二、当master代码改动了，需要更新开发分支（dev）上的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout master </span><br><span class="line">git pull </span><br><span class="line">git checkout dev</span><br><span class="line">git merge master (rebase)</span><br><span class="line">git push -u origin dev</span><br></pre></td></tr></table></figure></p>
+<h3 id="虚线view"><a href="#虚线view" class="headerlink" title="虚线view"></a>虚线view</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">public class DashedLine extends View &#123;</span><br><span class="line">	private Paint paint = null;</span><br><span class="line">	private Path path = null;</span><br><span class="line">	private PathEffect pe = null;</span><br><span class="line"></span><br><span class="line">	public DashedLine(Context paramContext) &#123;</span><br><span class="line">		super(paramContext, null);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public DashedLine(Context paramContext, AttributeSet paramAttributeSet) &#123;</span><br><span class="line">		super(paramContext, paramAttributeSet);</span><br><span class="line">		TypedArray a = paramContext.obtainStyledAttributes(paramAttributeSet,</span><br><span class="line">				R.styleable.dashedline);</span><br><span class="line">		// 可通过TypedArray获得它的值当用户无设置值是采用默认值0XFFFFFFFF</span><br><span class="line">		int lineColor = a</span><br><span class="line">				.getColor(R.styleable.dashedline_lineColor, 0XFFFFFFFF);</span><br><span class="line">		a.recycle();</span><br><span class="line">		this.paint = new Paint();</span><br><span class="line">		this.path = new Path();</span><br><span class="line">		this.paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">		this.paint.setColor(lineColor);</span><br><span class="line">		this.paint.setAntiAlias(true);</span><br><span class="line">		this.paint.setStrokeWidth(4.0F);</span><br><span class="line">		float[] arrayOfFloat = new float[4];</span><br><span class="line">		arrayOfFloat[0] = 8.0f;</span><br><span class="line">		arrayOfFloat[1] = 8.0f;</span><br><span class="line">		arrayOfFloat[2] = 8.0f;</span><br><span class="line">		arrayOfFloat[3] = 8.0f;</span><br><span class="line">		//设置虚线虚实的长度，必须为偶数个</span><br><span class="line">		this.pe = new DashPathEffect(arrayOfFloat, 1f);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void onDraw(Canvas canvas) &#123;</span><br><span class="line">		super.onDraw(canvas);</span><br><span class="line">		this.path.moveTo(0.0F, 0.0F);</span><br><span class="line">		this.path.lineTo(getMeasuredWidth(), 0.0F);</span><br><span class="line">		this.paint.setPathEffect(this.pe);</span><br><span class="line">		canvas.drawPath(this.path, this.paint);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Android-studio-插件"><a href="#Android-studio-插件" class="headerlink" title="Android studio 插件"></a>Android studio 插件</h3><ul>
+<li><a href="https://blog.csdn.net/lyj1005353553/article/details/55100563/" target="_blank" rel="noopener">最全最好用的Android Studio插件整理</a></li>
+</ul>
+<ol>
+<li>AndroidSourceViewer：查看源码</li>
+<li>Translation:翻译</li>
+<li>Android Studio Prettify：自动书写findviewbyid、字符串到资源文件</li>
+<li>AndroidLocalizationer：自动生成string其他国家的语言</li>
+</ol>
+<h3 id="启动模式"><a href="#启动模式" class="headerlink" title="启动模式"></a>启动模式</h3><ul>
+<li><strong>FLAG_ACTIVITY_NEW_TASK</strong>：这个标识会使新启动的Activity独立创建一个Task。<br><br></li>
+<li><strong>FLAG_ACTIVITY_CLEAR_TOP</strong>：这个标识会使新启动的Activity检查是否存在于Task中，如果存在则清除其之上的Activity，使它获得焦点，并不重新实例化一个Activity，一般结合FLAG_ACTIVITY_NEW_TASK一起使用。<br><br><br></li>
+<li><strong>FLAG_ACTIVITY_SINGLE_TOP</strong>：等同于在LauncherMode属性设置为singleTop。</li>
+</ul>
+<h3 id="RxJava1"><a href="#RxJava1" class="headerlink" title="RxJava1"></a>RxJava1</h3><h4 id="操作符："><a href="#操作符：" class="headerlink" title="操作符："></a>操作符：</h4><h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><blockquote>
+<p>转换，将Object转换成Object</p>
+</blockquote>
+<h5 id="flatmap"><a href="#flatmap" class="headerlink" title="flatmap"></a>flatmap</h5><blockquote>
+<p>转换，与map不同的是flatmap是将object转换成observable     </p>
+</blockquote>
+<h5 id="just"><a href="#just" class="headerlink" title="just"></a>just</h5><blockquote>
+<p>处理数组或者单个的值</p>
+</blockquote>
+<h5 id="form"><a href="#form" class="headerlink" title="form"></a>form</h5><blockquote>
+<p>处理数组，直接出来的是一个一个值，而just是直接出来整个数组</p>
+</blockquote>
+<h3 id="音频焦点"><a href="#音频焦点" class="headerlink" title="音频焦点"></a>音频焦点</h3><p>AudioFocus是控制音频焦点主要的类  </p>
+<ol>
+<li><p>requestAudioFous是请求焦点的方法；<br>返回是否请求成功<br>三个参数</p>
+<blockquote>
+<p>requestAudioFocus(OnAudioFocusChangeListener l, int streamType, int durationHint)  </p>
+</blockquote>
+<p> <em><strong>durationHint</strong></em></p>
+<p> <strong>AUDIOFOCUS_GAIN</strong><br>代表此次申请的音频焦点需要长时间持有，原本获取了音频焦点的OnAudioFocusChangeListener 接口将会回调onAudioFocusChange(int focusChange) 方法，传入的参数为AUDIOFOCUS_LOSS。</p>
+<p> <strong>AUDIOFOCUS_GAIN_TRANSIENT</strong><br>代表此次申请的音频焦点只需短暂持有，原本获取了音频焦点的OnAudioFocusChangeListener 接口将会回调onAudioFocusChange(int focusChange) 方法，传入的参数为AUDIOFOCUS_LOSS_TRANSIENT。按照官方注释：在接收到事件通知等情景时可使用该durationHint。</p>
+<p> <strong>AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE</strong><br>代表此次申请的音频焦点只需短暂持有，原本获取了音频焦点的OnAudioFocusChangeListener 接口将会回调onAudioFocusChange(int focusChange) 方法，传入的参数为AUDIOFOCUS_LOSS_TRANSIENT。按照官方注释：在需要录音或语音识别等情景时可使用该durationHint。</p>
+<p> <b>AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK</b><br>代表此次申请不需要暂停其它申请的音频播放，但是需要其降低音量。原本获取了音频焦点的OnAudioFocusChangeListener 接口将会回调onAudioFocusChange(int focusChange) 方法，传入的参数为AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK。</p>
+<pre><code>int result = mAudioManager.requestAudioFocus(mFocusChangeListener, AudioManager.STREAM_MUSIC,
+        AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+    mMediaPlayer.start();
+}
+</code></pre></li>
+<li><strong>onAudioFocusChange</strong><br> _<strong>AudioManager.AUDIOFOCUS_GAIN</strong>_<br> _<strong>AudioManager.AUDIOFOCUS_LOSS</strong>_<br> _<strong>AudioManager.AUDIOFOCUS_LOSS_TRANSIENT</strong>_<br> _<strong>AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK</strong>_</li>
+</ol>
+<h3 id="Launcher"><a href="#Launcher" class="headerlink" title="Launcher"></a>Launcher</h3><ul>
+<li><h4 id="设置应用为系统的launcher"><a href="#设置应用为系统的launcher" class="headerlink" title="设置应用为系统的launcher"></a>设置应用为系统的launcher</h4></li>
+</ul>
+<ol>
+<li><p>在应用的AndroidManifest.xml文件中的作为Home界面的Activity的intent-filter节点中添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;</span><br><span class="line">&lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将应用打包成build版本，将apk复制到/system/priv-app/应用名称的文件夹/中，查看apk中有没有os文件，如果有，将os文件复制到/system/lib/中，并在apk同级目录中新建/lib/arm/文件夹，创建刚刚导入os文件的软链接。</p>
+</li>
+<li><p>修改源码: frameworks/base/core/java/com/android/internal/app/ResolverActivity.java</p>
+<pre><code>public int getDefaultHomePosition(String packageName){
+    for (int i = 0; i &lt; mList.size(); i++) {
+        ResolveInfo info = mList.get(i).ri;
+        if (DEBUG)
+        Log.w(TAG,&quot;getDefaultHomePosition &quot; + info.activityInfo.packageName);
+        if (info.activityInfo.packageName.equals(packageName)) {
+           return i;
+        }
+    }
+    return -1;
+}
+</code></pre></li>
+</ol>
+<pre><code>1. 在ResolveListAdapter中添加getDefaultHomePosition(String packageName)方法，用于获取默认home app在List&lt;DisplayResolveInfo&gt; 中的位置，代码如下:
+
+2. 在ResolverActivity中添加设置默认app的方法setupDefaultLauncher()，代码如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//用于记录默认home app是否设置过</span><br><span class="line">private static final String DEFAULT_HOME = &quot; home app包名&quot;;</span><br><span class="line">private void setupDefaultLauncher() &#123;</span><br><span class="line">    String first = &quot;&quot;;</span><br><span class="line">    try&#123;</span><br><span class="line">        first =  SystemProperties.get(DEFAULT_HOME);</span><br><span class="line">    &#125;catch(Exception e)&#123;</span><br><span class="line">        Log.w(TAG,&quot;exception error get DEFAULT_HOME&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //判断默认home 是否设置过，如果获取的字符串为空代表，未设置，否则return不在进行设置</span><br><span class="line">    if (!TextUtils.isEmpty(first)) &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    //使用包名获取所需设置的默认home app在ResolveListAdapter中的位置</span><br><span class="line">    int position = mAdapter.getDefaultHomePosition(&quot;home app包名&quot;);</span><br><span class="line">    //如果不存在则return</span><br><span class="line">    if (position == -1) &#123;</span><br><span class="line">        if (DEBUG)</span><br><span class="line">        Log.w(TAG,&quot;not find default Home&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    //设置默认home app后，则添加记录</span><br><span class="line">    try&#123;</span><br><span class="line">        SystemProperties.set(DEFAULT_HOME,DEFAULT_HOME);</span><br><span class="line">    &#125;catch(Exception e)&#123;</span><br><span class="line">        Log.w(TAG,&quot;exception error set DEFAULT_HOME&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //设置默认home app，并跳转</span><br><span class="line">    startSelected(position, true, true);</span><br><span class="line">    //结束此activity</span><br><span class="line">    dismiss();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+3. 为了保证mAdapter被初始化 setupDefaultLauncher()的调用添加到ResolverActivity的onCreate函数中，代码如下：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int count = mAdapter.mList.size();</span><br><span class="line">//添加的代码</span><br><span class="line">setupDefaultLauncher();</span><br><span class="line">//原有逻辑</span><br><span class="line">//如果系统中home app大于1</span><br><span class="line">if (count &gt; 1 || (count == 1 &amp;&amp; mAdapter.getOtherProfile() != null)) &#123;</span><br><span class="line">    //初始化代码</span><br><span class="line">    .........</span><br><span class="line">//如果home app等于1则设置唯一的home app为Home</span><br><span class="line">&#125; else if (count == 1) &#123;</span><br></pre></td></tr></table></figure>
+</code></pre><ol start="4">
+<li><p>编译framework代码，cd framework/base 执行 mm执行如下命令:</p>
+<blockquote>
+<p>adb remount<br>adb push framework-res.apk /system/framework/<br>adb push framework.jar /system/framework/<br>adb push services.jar /system/framework/ （如果有修改的话）以命令  </p>
+</blockquote>
+<p> 注意：有的系统编译framework后还生成了secondary_framework.jar，也需要push。</p>
+</li>
+<li>运行make snod生成新的system.img,然后使用adb进行刷机。</li>
+<li>需要注意的问题：  <ol>
+<li>Android应用里面通过gradle引用的第三方库中如果含有os库，也需要将这些文件拷贝到/system/lib文件中</li>
+<li>可以使用git Bush查看os文件是32位还是64位，决定放进/system/lib还是/system/lib64中，命令为file *</li>
+<li>查看应用中使用到的os文件可以通过解压apk文件，查看里面的libs文件夹中的文件。</li>
+</ol>
+</li>
+</ol>
+<h3 id="使用AleartDialog遇到的问题"><a href="#使用AleartDialog遇到的问题" class="headerlink" title="使用AleartDialog遇到的问题"></a>使用AleartDialog遇到的问题</h3><h4 id="1-弹出软键盘之后点击cancel之后dialog消失，但是键盘没有随之消失"><a href="#1-弹出软键盘之后点击cancel之后dialog消失，但是键盘没有随之消失" class="headerlink" title="1. 弹出软键盘之后点击cancel之后dialog消失，但是键盘没有随之消失"></a>1. 弹出软键盘之后点击cancel之后dialog消失，但是键盘没有随之消失</h4><p><strong>原因</strong>: 在清单文件此activity中添加</p>
+<pre><code>android:windowSoftInputMode=&quot;adjustPan|stateHidden&quot;
+</code></pre><p>导致键盘不能消失。</p>
+<h4 id="2-在Android5-0系统中点击dialog外面不会自动消失需要添加setCanceledOnTouchOutside-true"><a href="#2-在Android5-0系统中点击dialog外面不会自动消失需要添加setCanceledOnTouchOutside-true" class="headerlink" title="2. 在Android5.0系统中点击dialog外面不会自动消失需要添加setCanceledOnTouchOutside(true)"></a>2. 在Android5.0系统中点击dialog外面不会自动消失需要添加setCanceledOnTouchOutside(true)</h4><h3 id="跳转到其他应用"><a href="#跳转到其他应用" class="headerlink" title="跳转到其他应用"></a>跳转到其他应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">private void openApp(String packageName) &#123;</span><br><span class="line">    final PackageManager packageManager = mActivity.getPackageManager();</span><br><span class="line">    PackageInfo pi = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        pi = mActivity.getPackageManager().getPackageInfo(packageName, 0);</span><br><span class="line">    &#125; catch (PackageManager.NameNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    if (pi == null || pi.packageName == null) &#123;</span><br><span class="line">        tellUserResult(voicefragment.getString(R.string.not_installation), true);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    Intent resolveIntent = new Intent(Intent.ACTION_MAIN, null);</span><br><span class="line">    resolveIntent.addCategory(Intent.CATEGORY_LAUNCHER);</span><br><span class="line">    resolveIntent.setPackage(pi.packageName);</span><br><span class="line"></span><br><span class="line">    List&lt;ResolveInfo&gt; apps = packageManager.queryIntentActivities(resolveIntent, 0);</span><br><span class="line"></span><br><span class="line">    ResolveInfo ri = apps.iterator().next();</span><br><span class="line">    if (ri != null) &#123;</span><br><span class="line">        String pkgName = ri.activityInfo.packageName;</span><br><span class="line">        String className = ri.activityInfo.name;</span><br><span class="line"></span><br><span class="line">        Intent intent = new Intent(Intent.ACTION_MAIN);</span><br><span class="line">        intent.addCategory(Intent.CATEGORY_LAUNCHER);</span><br><span class="line">        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">        ComponentName cn = new ComponentName(pkgName, className);</span><br><span class="line"></span><br><span class="line">        intent.setComponent(cn);</span><br><span class="line">        mActivity.startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读取assets中的json文件"><a href="#读取assets中的json文件" class="headerlink" title="读取assets中的json文件"></a>读取assets中的json文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public String getJson(String fileName) &#123;</span><br><span class="line"></span><br><span class="line">    StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">    try &#123;</span><br><span class="line">        AssetManager assetManager = mActivity.getAssets();</span><br><span class="line">        BufferedReader bf = new BufferedReader(new InputStreamReader(</span><br><span class="line">                assetManager.open(fileName)));</span><br><span class="line">        String line;</span><br><span class="line">        while ((line = bf.readLine()) != null) &#123;</span><br><span class="line">            stringBuilder.append(line);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return stringBuilder.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="TTS"><a href="#TTS" class="headerlink" title="TTS"></a>TTS</h3><p>UtteranceProgressListener 没有起作用，原因是</p>
+<ol>
+<li>和 OnUtteranceCompletedListener  一起使用会造成冲突</li>
+<li>textToSpeech.speak(playText, TextToSpeech.QUEUE_FLUSH, null,String.valueOf(map)); 第三个参数需要传入utteranceID，才可以激活listener</li>
+</ol>
+<h3 id="switchButton"><a href="#switchButton" class="headerlink" title="switchButton"></a>switchButton</h3><p><a href="https://github.com/iielse/SwitchButton" target="_blank" rel="noopener">switchbutton</a></p>
+<blockquote>
+<p>implementation ‘ch.ielse:switchbutton:1.0.1’</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ch.ielse.view.SwitchView</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switchView.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> isOpened = switchView.isOpened();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">view.toggleSwitch(<span class="keyword">true</span>); <span class="comment">// or false</span></span><br></pre></td></tr></table></figure>
+<h3 id="保留两位小数处理"><a href="#保留两位小数处理" class="headerlink" title="保留两位小数处理"></a>保留两位小数处理</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String value = <span class="string">"36"</span>;</span><br><span class="line">DecimalFormat format = <span class="keyword">new</span> DecimalFormat(<span class="string">"0.00"</span>);</span><br><span class="line">format.format(Float.valueOf(value))</span><br></pre></td></tr></table></figure>
+<h3 id="recyclerView-添加分割线"><a href="#recyclerView-添加分割线" class="headerlink" title="recyclerView 添加分割线"></a>recyclerView 添加分割线</h3><blockquote>
+<p>recyclerview.addItemDecoration(new DividerItemDecoration(context,orientation))</p>
+</blockquote>
+<p><strong>自定义 DividerItemDecoration</strong></p>
+<p><a href="https://blog.csdn.net/Heijinbaitu/article/details/81170314" target="_blank" rel="noopener">参考1</a></p>
+<p><a href="https://jayfeng.com/2016/03/01/%E8%B0%88%E8%B0%88Android%E4%B8%AD%E7%9A%84Divider/" target="_blank" rel="noopener">参考2</a> 实现改变分割线长度的自定义divider</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--分割线的高度，横向的RecyclerView,这里设置宽度即可--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">size</span> <span class="attr">android:height</span>=<span class="string">"1dp"</span> <span class="attr">android:width</span>=<span class="string">"1dp"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--分割线的颜色--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@color/gray"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DividerItemDecoration dividerItemDecoration = <span class="keyword">new</span> DividerItemDecoration(mActivity,</span><br><span class="line">        DividerItemDecoration.VERTICAL);</span><br><span class="line">dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.divider));</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+    
+  </div>
+
+  
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Yang Mingxin">
+  <p class="site-author-name" itemprop="name">Yang Mingxin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mingxin-yang" title="GitHub &rarr; https://github.com/mingxin-yang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Mingxin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">20k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">18 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">
+      
+    主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
+  </div>
+
+        
+
+
+
+
+
+
+  
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=SLqA57dEhWMDw4NMfO10k5rv-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'SLqA57dEhWMDw4NMfO10k5rv-gzGzoHsz',
+            'X-LC-Key': 'EsAIQTK8FtSdNRUSbWcdJKur',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'SLqA57dEhWMDw4NMfO10k5rv-gzGzoHsz',
+    appKey: 'EsAIQTK8FtSdNRUSbWcdJKur',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
