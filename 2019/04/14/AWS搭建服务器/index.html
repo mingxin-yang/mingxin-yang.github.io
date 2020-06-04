@@ -4,7 +4,7 @@
 
 
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '7.4.1',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -47,27 +47,27 @@
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     },
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。   创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务">
+  <meta name="description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。  创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务器">
 <meta name="keywords" content="VPS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS搭建服务器">
 <meta property="og:url" content="http://yoursite.com/2019/04/14/AWS搭建服务器/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。   创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。  创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务器">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006d1CrTly1g261et5z94j30w607ujs0.jpg">
 <meta property="og:updated_time" content="2020-04-26T04:49:52.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS搭建服务器">
-<meta name="twitter:description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。   创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务">
+<meta name="twitter:description" content="需知  亚马逊新注册用户可以免费使用一年EC2服务器 创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。  创建EC2服务器 申请账号登录，需要信用卡信息；  选择服务器的地址，可以使用 测试网站 观察哪个区域的速度比较快；  国内的话东京的速度要快一些   点击 service-&amp;gt;EC2 , 创建实例，选择免费的服务器，进行服务器">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006d1CrTly1g261et5z94j30w607ujs0.jpg">
   <link rel="canonical" href="http://yoursite.com/2019/04/14/AWS搭建服务器/">
 
@@ -136,7 +136,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -156,7 +156,46 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
       
@@ -169,12 +208,14 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       
     
   </ul>
+
+    
 
 </nav>
 </div>
@@ -190,8 +231,6 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-            
-
           <div class="content">
             
 
@@ -199,7 +238,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/AWS搭建服务器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,13 +264,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
               
                 
               
 
-              <time title="创建时间：2019-04-14 10:53:25" itemprop="dateCreated datePublished" datetime="2019-04-14T10:53:25+08:00">2019-04-14</time>
+              <time title="Created: 2019-04-14 10:53:25" itemprop="dateCreated datePublished" datetime="2019-04-14T10:53:25+08:00">2019-04-14</time>
             </span>
           
             
@@ -241,18 +280,18 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
               </span>
             
           
 
           
-            <span id="/2019/04/14/AWS搭建服务器/" class="post-meta-item leancloud_visitors" data-flag-title="AWS搭建服务器" title="阅读次数">
+            <span id="/2019/04/14/AWS搭建服务器/" class="post-meta-item leancloud_visitors" data-flag-title="AWS搭建服务器" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="post-meta-item-text">Views: </span>
               <span class="leancloud-visitors-count"></span>
             </span>
           
@@ -264,7 +303,7 @@
       </span>
         
       
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">Valine: </span>
     
     <a title="valine" href="/2019/04/14/AWS搭建服务器/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2019/04/14/AWS搭建服务器/" itemprop="commentCount"></span>
@@ -273,24 +312,24 @@
   
   
           <br>
-            <span class="post-meta-item" title="本文字数">
+            <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
               
-                <span class="post-meta-item-text">本文字数：</span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
               
               <span>283</span>
             </span>
           
-            <span class="post-meta-item" title="阅读时长">
+            <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
               
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>1 分钟</span>
+              <span>1 mins.</span>
             </span>
           
 
@@ -308,8 +347,7 @@
 <li>亚马逊新注册用户可以免费使用一年EC2服务器</li>
 <li>创建服务器需要绑定Visa信用卡，使用信用卡进行身份认证，会扣除一美元，一年之后如果没有超量，会返回到信用卡。</li>
 </ol>
-</blockquote>
-<h1 id="创建EC2服务器"><a href="#创建EC2服务器" class="headerlink" title="创建EC2服务器"></a>创建EC2服务器</h1><ol>
+</blockquote><h1 id="创建EC2服务器"><a href="#创建EC2服务器" class="headerlink" title="创建EC2服务器"></a>创建EC2服务器</h1><ol>
 <li><p>申请账号登录，需要信用卡信息；</p>
 </li>
 <li><p>选择服务器的地址，可以使用 <a href="https://www.cloudping.info/" target="_blank" rel="noopener">测试网站</a> 观察哪个区域的速度比较快；</p>
@@ -323,7 +361,8 @@
 </li>
 <li><p>配置AWS 安全组入站规则，<strong>自定义 TCP规则</strong> （shadowsocks设置的端口号）来源随便</p>
 </li>
-</ol>
+</ol><a id="more"></a>
+
 <p><img src="https://ws1.sinaimg.cn/large/006d1CrTly1g261et5z94j30w607ujs0.jpg" alt></p>
 <ol start="6">
 <li>注意密钥文件不能丢失。</li>
@@ -339,20 +378,20 @@
         <div class="reward-container">
   <div></div>
   <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+    Donate
   </button>
   <div id="qr" style="display: none;">
         
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="小小站 微信支付">
-        <p>微信支付</p>
+        <img src="/images/wechatpay.jpg" alt="小小站 WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
         
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="小小站 支付宝">
-        <p>支付宝</p>
+        <img src="/images/alipay.jpg" alt="小小站 Alipay">
+        <p>Alipay</p>
       </div>
 
   </div>
@@ -428,10 +467,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -455,7 +494,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
         </a>
       </div>
     
@@ -468,7 +520,7 @@
           
         
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">tags</span>
         </a>
       </div>
     
@@ -515,19 +567,19 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="Symbols count total">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="Reading time total">18 mins.</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
-    主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
+    Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1
   </div>
 
         
@@ -653,7 +705,8 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
 <script src="/js/next-boot.js?v=7.4.1"></script>
 
 

@@ -4,7 +4,7 @@
 
 
 
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     version: '7.4.1',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -47,9 +47,9 @@
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     },
     sidebarPadding: 40
   };
@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/13/Android杂记/index.html">
 <meta property="og:site_name" content="小站">
 <meta property="og:description" content="拨号界面光标问题主要代码123456789101112TextView text = (TextView) arg1;Log.v(&amp;quot;NUmber&amp;quot;, text.getText().toString());int index=editText.getSelectionStart();Editable edit = editText.getEditableText();//获取Ed">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2020-04-26T04:49:52.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android杂记">
@@ -134,7 +134,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -154,7 +154,46 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
       
@@ -167,12 +206,14 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       
     
   </ul>
+
+    
 
 </nav>
 </div>
@@ -188,8 +229,6 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-            
-
           <div class="content">
             
 
@@ -197,7 +236,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/Android杂记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -223,13 +262,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
               
                 
               
 
-              <time title="创建时间：2019-04-13 13:39:27" itemprop="dateCreated datePublished" datetime="2019-04-13T13:39:27+08:00">2019-04-13</time>
+              <time title="Created: 2019-04-13 13:39:27" itemprop="dateCreated datePublished" datetime="2019-04-13T13:39:27+08:00">2019-04-13</time>
             </span>
           
             
@@ -239,18 +278,18 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-26 12:49:52" itemprop="dateModified" datetime="2020-04-26T12:49:52+08:00">2020-04-26</time>
               </span>
             
           
 
           
-            <span id="/2019/04/13/Android杂记/" class="post-meta-item leancloud_visitors" data-flag-title="Android杂记" title="阅读次数">
+            <span id="/2019/04/13/Android杂记/" class="post-meta-item leancloud_visitors" data-flag-title="Android杂记" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="post-meta-item-text">Views: </span>
               <span class="leancloud-visitors-count"></span>
             </span>
           
@@ -262,7 +301,7 @@
       </span>
         
       
-      <span class="post-meta-item-text">Valine：</span>
+      <span class="post-meta-item-text">Valine: </span>
     
     <a title="valine" href="/2019/04/13/Android杂记/#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/Android杂记/" itemprop="commentCount"></span>
@@ -271,24 +310,24 @@
   
   
           <br>
-            <span class="post-meta-item" title="本文字数">
+            <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
               
-                <span class="post-meta-item-text">本文字数：</span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
               
               <span>18k</span>
             </span>
           
-            <span class="post-meta-item" title="阅读时长">
+            <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
               
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>16 分钟</span>
+              <span>16 mins.</span>
             </span>
           
 
@@ -301,7 +340,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="拨号界面光标问题主要代码"><a href="#拨号界面光标问题主要代码" class="headerlink" title="拨号界面光标问题主要代码"></a>拨号界面光标问题主要代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TextView text = (TextView) arg1;</span><br><span class="line">Log.v(&quot;NUmber&quot;, text.getText().toString());</span><br><span class="line">int index=editText.getSelectionStart();</span><br><span class="line">Editable edit = editText.getEditableText();//获取EditText的文字</span><br><span class="line">Log.d(TAG, &quot;onItemClick: &quot;+index+&quot; &quot;+edit.length());</span><br><span class="line">if (index &lt; 0 || index &gt;= edit.length() )&#123;</span><br><span class="line">    edit.append(text.getText());</span><br><span class="line">    editText.clearFocus();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    edit.insert(index,text.getText());//光标所在位置插入文字</span><br><span class="line">&#125;</span><br><span class="line">editText.setSelection(index + 1);</span><br></pre></td></tr></table></figure>
+        <h3 id="拨号界面光标问题主要代码"><a href="#拨号界面光标问题主要代码" class="headerlink" title="拨号界面光标问题主要代码"></a>拨号界面光标问题主要代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">TextView text = (TextView) arg1;</span><br><span class="line">Log.v(&quot;NUmber&quot;, text.getText().toString());</span><br><span class="line">int index=editText.getSelectionStart();</span><br><span class="line">Editable edit = editText.getEditableText();//获取EditText的文字</span><br><span class="line">Log.d(TAG, &quot;onItemClick: &quot;+index+&quot; &quot;+edit.length());</span><br><span class="line">if (index &lt; 0 || index &gt;= edit.length() )&#123;</span><br><span class="line">    edit.append(text.getText());</span><br><span class="line">    editText.clearFocus();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    edit.insert(index,text.getText());//光标所在位置插入文字</span><br><span class="line">&#125;</span><br><span class="line">editText.setSelection(index + 1);</span><br></pre></td></tr></table></figure><a id="more"></a>
 <h3 id="Picasso加载图片到size小的控件中会产生OOM"><a href="#Picasso加载图片到size小的控件中会产生OOM" class="headerlink" title="Picasso加载图片到size小的控件中会产生OOM"></a>Picasso加载图片到size小的控件中会产生OOM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Picasso.with(context.getApplicationContext()).load(url)</span><br><span class="line">                .resize(width, height)</span><br><span class="line">                .into(imageView);</span><br><span class="line">或</span><br><span class="line">Picasso.with(context.getApplicationContext()).load(url)</span><br><span class="line">                //从dimen里面取</span><br><span class="line">                .resizeDimen(targetWidthResId, targetHeightResId)</span><br><span class="line">                .into(imageView);</span><br></pre></td></tr></table></figure>
 <h3 id="免责声明页面的dialog"><a href="#免责声明页面的dialog" class="headerlink" title="免责声明页面的dialog"></a>免责声明页面的dialog</h3><p>实现思路：<br>1.sp文件储存 是否不再提醒<br><br>2.判断sp返回的值，如果为true则弹窗<br>3.弹窗点击确定判断是否勾选CheckBox，从而改变sp的值。<br>4.点击取消退出应用。   </p>
 <p>下面是部分代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">disclaimer = LayoutInflater.from(this).inflate(R.layout.dialog_disclaimer, null);</span><br><span class="line">cb = disclaimer.findViewById(R.id.cb);</span><br><span class="line">textView = disclaimer.findViewById(R.id.disclaimer_tv);</span><br><span class="line">//设置textview可以滚动</span><br><span class="line">textView.setMovementMethod(ScrollingMovementMethod.getInstance());</span><br><span class="line">if (!SharedPreferenceUtil.getIFTTT(this, KEY_DISCLAIMER_TIP, false)) &#123;</span><br><span class="line">    disclaimerDialog = new android.app.AlertDialog.Builder(this)</span><br><span class="line">            .setTitle(R.string.statement)</span><br><span class="line">            .setView(disclaimer)//自定义dialog</span><br><span class="line">            .setOnKeyListener(new DialogInterface.OnKeyListener() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) &#123;</span><br><span class="line">                    if (event.getKeyCode() == KeyEvent.KEYCODE_SEARCH) &#123;</span><br><span class="line">                        return true;</span><br><span class="line">                    &#125;</span><br><span class="line">                    return false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)//设置监听返回按钮，此处无用</span><br><span class="line">            .setNegativeButton(this.getResources().getString(R.string.cancel),</span><br><span class="line">                    new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                            AppUtils.exitApp();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">            .setPositiveButton(this.getResources().getString(R.string.sure),</span><br><span class="line">                    new DialogInterface.OnClickListener() &#123;</span><br><span class="line">                        @Override</span><br><span class="line">                        public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">                            if (cb.isChecked()) &#123;</span><br><span class="line">                                SharedPreferenceUtil.saveIFTTT(MainActivity3.this, KEY_DISCLAIMER_TIP, true);</span><br><span class="line">                            &#125; else &#123;</span><br><span class="line">                                SharedPreferenceUtil.saveIFTTT(MainActivity3.this, KEY_DISCLAIMER_TIP, false);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;).create();</span><br><span class="line">    //设置dialog外面和返回键不能点击</span><br><span class="line">    disclaimerDialog.setCancelable(false);</span><br><span class="line">    disclaimerDialog.show();</span><br><span class="line">    //设置dialog的宽度</span><br><span class="line">    WindowManager.LayoutParams lp = Objects.requireNonNull(disclaimerDialog.getWindow()).getAttributes();</span><br><span class="line">    DisplayMetrics d = this.getResources().getDisplayMetrics();</span><br><span class="line">    lp.width = (int) (d.widthPixels * 0.98);</span><br><span class="line">    disclaimerDialog.getWindow().setAttributes(lp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -465,20 +504,20 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
         <div class="reward-container">
   <div></div>
   <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+    Donate
   </button>
   <div id="qr" style="display: none;">
         
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.jpg" alt="小小站 微信支付">
-        <p>微信支付</p>
+        <img src="/images/wechatpay.jpg" alt="小小站 WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
         
       
       <div style="display: inline-block;">
-        <img src="/images/alipay.jpg" alt="小小站 支付宝">
-        <p>支付宝</p>
+        <img src="/images/alipay.jpg" alt="小小站 Alipay">
+        <p>Alipay</p>
       </div>
 
   </div>
@@ -550,10 +589,10 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -577,7 +616,20 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
           <a href="/archives/">
         
           <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
         </a>
       </div>
     
@@ -590,7 +642,7 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
           
         
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">tags</span>
         </a>
       </div>
     
@@ -637,19 +689,19 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="Symbols count total">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="Reading time total">18 mins.</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
-    主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
+    Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1
   </div>
 
         
@@ -775,7 +827,8 @@ if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
 <script src="/js/next-boot.js?v=7.4.1"></script>
 
 
