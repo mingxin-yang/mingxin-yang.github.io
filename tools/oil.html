@@ -1,0 +1,183 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="404, 小站">
+    <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Oil | 小站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <title>Home</title>
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <style>
+      #msg {
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      className="flex min-h-screen flex-col items-center justify-between p-24"
+    >
+      <div style="padding:20px">
+        <div >表格文件示例：</div>
+        <img src="./example.png" alt="example" style="width: 50%; margin-top: 20px;" />
+        <div style="margin-top: 50px;">
+
+          <input className="mt-10" type="file" id="fileInput" />
+        </div>
+        <div id="msg" style="margin-top: 50px;"></div>
+      </div>
+    </main>
+  </body>
+  <script type="text/javascript">
+    const dataMap = {
+      保定: "保定南",
+      沧州: "沧州北",
+      承德: ["三岔口", "四合永"],
+      邯郸: "邯郸油库",
+      衡水: "衡水油库",
+      廊坊: null,
+      秦皇岛: ["西付店", "秦皇岛汇博寄外库"],
+      石家庄: "高庄",
+      唐山: "任各庄",
+      邢台: "邢台",
+      雄安: "保定南",
+      张家口: ["怀安代储库", "张家口中化寄外库"],
+    };
+
+    $(document).ready(function () {
+      $("#fileInput").on("change", function (e) {
+        let file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const dataDescStr = handleXLXS(e.target.result);
+          $("#msg").text(dataDescStr);
+          // delete input file
+          $("#fileInput").val("");
+        };
+        reader.readAsArrayBuffer(file);
+      });
+    });
+
+    const handleXLXS = (file) => {
+      console.log("handleXLXS");
+      const workbook = XLSX.read(file, { type: "array" });
+      const worksheet = workbook.Sheets["Sheet1"];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+        header: 1,
+        range: 1,
+      });
+
+      jsonData.forEach((item) => {
+        if (item[0] !== undefined) {
+          item[0] = item[0].replace("河北", "").replace("石油分公司", "");
+        }
+        if (item[1] !== undefined) {
+          item[1] = item[1].replace("河北", "").replace("油库", "");
+        }
+      });
+
+      const dataNotInMap = [];
+
+      for (let i = 0; i < jsonData.length; i++) {
+        const item = jsonData[i];
+        if (
+          item[1] !== undefined &&
+          item[0] === undefined &&
+          item[1] !== "(空白)" &&
+          item[1] !== "(空白)" &&
+          item[0] !== "总计"
+        ) {
+          item[0] = jsonData[i - 1][0];
+          if (
+            dataMap[item[0]] === null ||
+            (item[1] !== dataMap[item[0]] &&
+              !dataMap[item[0]].includes(item[1]))
+          ) {
+            if (
+              item[2] !== undefined ||
+              item[3] !== undefined ||
+              item[4] !== undefined
+            ) {
+              dataNotInMap.push(item);
+            }
+          }
+        }
+      }
+      let dataDescStr = "";
+
+      for (let i = 0; i < dataNotInMap.length; i++) {
+        const item = dataNotInMap[i];
+        if (i > 0 && item[0] === dataNotInMap[i - 1][0]) {
+          if(item[1]=="大港"){
+            dataDescStr += `; 自${item[1]}油库跨省提`;
+          }else{
+            dataDescStr += `; 自${item[1]}油库跨区提`;
+          }
+        } else {
+          if(item[1]=="大港"){
+            dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
+              item[1]
+            }油库跨省提`;
+          }else{
+            dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
+              item[1]
+            }油库跨区提`;
+          }
+        }
+        if (item[2] !== undefined) {
+          dataDescStr += `柴油${turnUnit(item[2])}吨`;
+        }
+        if (item[3] !== undefined) {
+          if (dataDescStr[dataDescStr.length - 1] === "吨") {
+            dataDescStr += "，";
+          }
+          dataDescStr += `92#${turnUnit(item[3])}吨`;
+        }
+        if (item[4] !== undefined) {
+          if (dataDescStr[dataDescStr.length - 1] === "吨") {
+            dataDescStr += "，";
+          }
+          dataDescStr += `95#${turnUnit(item[4])}吨`;
+        }
+        if (
+          (i < dataNotInMap.length - 1 &&
+            item[0] !== dataNotInMap[i + 1][0]) ||
+          i === dataNotInMap.length - 1
+        ) {
+          dataDescStr += "。\n";
+        }
+      }
+
+      return dataDescStr;
+    };
+
+    function turnUnit(value) {
+      if (value === undefined) {
+        return undefined;
+      }
+      return Math.round(value / 1000);
+    }
+  </script>
+</html>
