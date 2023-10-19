@@ -89,6 +89,9 @@
         range: 1,
       });
 
+      console.log("jsonData: ", jsonData)
+
+
       jsonData.forEach((item) => {
         if (item[0] !== undefined) {
           item[0] = item[0].replace("河北", "").replace("石油分公司", "");
@@ -126,6 +129,8 @@
         }
       }
       let dataDescStr = "";
+
+      console.log("dataNotInMap: ", dataNotInMap);
 
       for (let i = 0; i < dataNotInMap.length; i++) {
         const item = dataNotInMap[i];
@@ -172,6 +177,90 @@
 
       return dataDescStr;
     };
+
+    function toExcel() {
+      const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+        header: "日期	到站所属单位	发站地址	汽油	92#汽油	95#汽油	爱跑98	柴油".split(
+          "\t"
+        ),
+        range: 1,
+      });
+
+      console.log("jsonData: ", jsonData)
+
+      var b = [
+    {
+        "日期": "2023.10.19",
+        "到站所属单位": "保定",
+        "发站地址": "河北高庄油库",
+        "汽油": 77,
+        "92#汽油": 33,
+        "95#汽油": 44,
+        "柴油": 78
+    },
+    {
+        "到站所属单位": "廊坊",
+        "发站地址": "河北保定南油库",
+        "汽油": 26,
+        "95#汽油": 26
+    },
+    {
+        "发站地址": "河北沧州北油库",
+        "汽油": 310,
+        "92#汽油": 236,
+        "95#汽油": 74,
+        "柴油": 236
+    },
+    {
+        "发站地址": "河北任各庄油库",
+        "汽油": 189,
+        "92#汽油": 80,
+        "95#汽油": 109,
+        "柴油": 20
+    },
+    {
+        "发站地址": "衡水油库",
+        "汽油": 50,
+        "95#汽油": 50
+    },
+    {
+        "到站所属单位": "雄安",
+        "发站地址": "河北高庄油库",
+        "汽油": 24,
+        "92#汽油": 13,
+        "95#汽油": 11,
+        "柴油": 17
+    },
+    {
+        "到站所属单位": "张家口",
+        "发站地址": "河北三岔口油库",
+        "汽油": 15,
+        "95#汽油": 15,
+        "柴油": 63
+    }
+]
+
+      const a = XLSX.utils.json_to_sheet(b, { header: "日期	到站所属单位	发站地址	汽油	92#汽油	95#汽油	爱跑98	柴油".split(
+          "\t"
+        ) })
+      a["!ref"] = "A1:H8"
+      var mergeRange = { s: { r: 1, c: 0 }, e: { r: 7, c: 0 } }
+      var merge = [{s: mergeRange.s, e: mergeRange.e }]
+      a["!merges"] = merge
+      const style = {
+        alignment: { horizontal: 'center', vertical: 'center' },
+        border: { top: { style: 'thin' }, bottom: { style: 'thin' }, left: { style: 'thin' }, right: { style: 'thin' } }
+      };
+      // 设置单元格样式
+      const mergeCellAddress = XLSX.utils.encode_cell(mergeRange.s);
+      const mergeCellObject = worksheet[mergeCellAddress];
+      mergeCellObject.s = style;
+
+
+      XLSX.writeFile({ SheetNames: ["Sheet1"], Sheets: { Sheet1: a } }, "test.xlsx")
+      // down a file
+      return;
+    }
 
     function turnUnit(value) {
       if (value === undefined) {

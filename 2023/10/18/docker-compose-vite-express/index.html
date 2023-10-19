@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python selenium 使用, 小站">
+    <meta name="keywords" content="docker-compose 项目实践, 小站">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Python selenium 使用 | 小站</title>
+    <title>docker-compose 项目实践 | 小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python selenium 使用</h1>
+                    <h1 class="description center-align post-title">docker-compose 项目实践</h1>
                 </div>
             </div>
         </div>
@@ -324,8 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/docker/">
+                                <span class="chip bg-color">docker</span>
                             </a>
                         
                     </div>
@@ -340,7 +340,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-30
+                    2023-10-18
                 </div>
                 
 
@@ -349,14 +349,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    931
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -379,36 +379,255 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Selenium"><a href="#Selenium" class="headerlink" title="Selenium"></a>Selenium</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver
-<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>common <span class="token keyword">import</span> NoSuchElementException
-<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>common<span class="token punctuation">.</span>by <span class="token keyword">import</span> By
-<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>support <span class="token keyword">import</span> expected_conditions <span class="token keyword">as</span> EC
-<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>support<span class="token punctuation">.</span>wait <span class="token keyword">import</span> WebDriverWait
-<span class="token keyword">from</span> selenium<span class="token punctuation">.</span>webdriver<span class="token punctuation">.</span>remote<span class="token punctuation">.</span>webelement <span class="token keyword">import</span> WebElement<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Docker-compose-vite-express"><a href="#Docker-compose-vite-express" class="headerlink" title="Docker compose vite+express"></a>Docker compose vite+express</h1><p>Frontend: react vite nginx</p>
+<p>Backend: node express mongo Redis</p>
+<p>使用docker compose启动多服务</p>
+<h2 id="Docker-Compose-文件"><a href="#Docker-Compose-文件" class="headerlink" title="Docker Compose 文件"></a>Docker Compose 文件</h2><h3 id="FrontEnd"><a href="#FrontEnd" class="headerlink" title="FrontEnd"></a>FrontEnd</h3><ol>
+<li>Dockerfile</li>
+</ol>
+<pre class="line-numbers language-dockerfile" data-language="dockerfile"><code class="language-dockerfile">FROM node:18-alpine3.17 as build
 
-<h2 id="通过css找到指定元素"><a href="#通过css找到指定元素" class="headerlink" title="通过css找到指定元素"></a>通过css找到指定元素</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">browser <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chome<span class="token punctuation">(</span><span class="token punctuation">)</span>
-browser<span class="token punctuation">.</span>find_element<span class="token punctuation">(</span>By<span class="token punctuation">.</span>CSS_SELECTOR<span class="token punctuation">,</span><span class="token string">'iframe[title="reCAPTCHA"]'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ENV VITE_API_URL&#x3D;http:&#x2F;&#x2F;backend:8009
+ENV NODE_OPTIONS&#x3D;--max_old_space_size&#x3D;4096
+ENV VITE_DOCKER&#x3D;true
 
-<p><strong>By</strong>:</p>
-<ul>
-<li>By.CSS_SELECTOR: 通过css</li>
-<li>By.TAG_NAME: 通过tag</li>
+WORKDIR &#x2F;app
+
+# Build in docker
+COPY package*.json  .&#x2F;
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+
+FROM nginx as production
+
+COPY --from&#x3D;build &#x2F;app&#x2F;dist &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html
+
+COPY nginx.conf &#x2F;etc&#x2F;nginx&#x2F;nginx.conf
+
+EXPOSE 80
+
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>nginx.conf</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">events <span class="token punctuation">&#123;</span>
+
+<span class="token punctuation">&#125;</span>
+
+http <span class="token punctuation">&#123;</span>
+    sendfile on<span class="token punctuation">;</span>
+		tcp_nopush on<span class="token punctuation">;</span>
+    types_hash_max_size <span class="token number">2048</span><span class="token punctuation">;</span>
+    <span class="token comment"># server_tokens off;</span>
+
+    <span class="token comment"># server_names_hash_bucket_size 64;</span>
+    <span class="token comment"># server_name_in_redirect off;</span>
+
+    include /etc/nginx/mime.types<span class="token punctuation">;</span>
+    default_type application/octet-stream<span class="token punctuation">;</span>
+
+    <span class="token function">gzip</span> on<span class="token punctuation">;</span>
+
+
+    server <span class="token punctuation">&#123;</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span>
+        server_name  localhost<span class="token punctuation">;</span>
+        location /service/<span class="token punctuation">&#123;</span>
+            proxy_pass http://backend:8009/<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        location / <span class="token punctuation">&#123;</span>
+            root   /usr/share/nginx/html/<span class="token punctuation">;</span>
+            index  index.html<span class="token punctuation">;</span>
+            try_files <span class="token variable">$uri</span> /index.html<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>vite.config.ts</li>
+</ol>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> legacy <span class="token keyword">from</span> <span class="token string">"@vitejs/plugin-legacy"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> react <span class="token keyword">from</span> <span class="token string">"@vitejs/plugin-react-swc"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> defineConfig<span class="token punctuation">,</span> loadEnv <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vite"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>mode<span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">react</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">legacy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  test<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    globals<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    environment<span class="token operator">:</span> <span class="token string">"jsdom"</span><span class="token punctuation">,</span>
+    setupFiles<span class="token operator">:</span> <span class="token string">"./src/setupTests.ts"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  resolve<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    alias<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token string">"@"</span><span class="token operator">:</span> <span class="token string">"/src"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  optimizeDeps<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    include<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"@mui/icons-material"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  server<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    proxy<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token string">"/service"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        target<span class="token operator">:</span> <span class="token function">loadEnv</span><span class="token punctuation">(</span>mode<span class="token punctuation">,</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token constant">VITE_API_URL</span><span class="token punctuation">,</span>
+        secure<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">rewrite</span><span class="token operator">:</span> <span class="token punctuation">(</span>path<span class="token punctuation">)</span> <span class="token operator">=></span> path<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/service</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 不可以省略rewrite</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="BackEnd"><a href="#BackEnd" class="headerlink" title="BackEnd"></a>BackEnd</h3><p>Dockerfile</p>
+<pre class="line-numbers language-dockerfile" data-language="dockerfile"><code class="language-dockerfile">FROM ubuntu:latest
+
+RUN apt-get update &amp;&amp; apt-get install -y curl
+RUN curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_20.x | bash -
+RUN apt-get install -y nodejs
+
+RUN apt-get install -y build-essential libcairo2-dev \
+ libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
+ENV MONGO_URL&#x3D;mongodb:&#x2F;&#x2F;db:27017&#x2F;db_name
+ENV REDIS_HOST&#x3D;redis
+
+WORKDIR &#x2F;app
+
+COPY package*.json  .&#x2F;
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8009
+
+CMD [&quot;npm&quot;, &quot;start&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因为后端使用了node-canvas，需要安装依赖项，各个操作系统需要的依赖不同，所以指定为Ubuntu系统。</p>
+<h3 id="docker-compose-yml"><a href="#docker-compose-yml" class="headerlink" title="docker-compose.yml"></a>docker-compose.yml</h3><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">services:
+  frontend:
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    build:
+      context: .&#x2F;frontend
+      dockerfile: Dockerfile
+    ports:
+      - &quot;5555:80&quot;
+    depends_on:
+      - backend
+    # 设置环境变量，因为vite build的时候需要设置space size，不然会oom
+    environment:
+      - NODE_OPTIONS&#x3D;--max-old-space-size&#x3D;4096
+    networks:
+      - mynetwork
+  backend:
+    build:
+      context: .&#x2F;server
+      dockerfile: Dockerfile
+    ports:
+      - &quot;8009:8009&quot;
+    depends_on:
+      - db
+      - redis
+    networks:
+      - mynetwork
+  db:
+    image: mongo:4.0.9
+    ports:
+      - &quot;27017:27017&quot;
+    restart: always
+    volumes:
+      - dbdata:&#x2F;data&#x2F;db 	# 映射到卷中，保证删除container数据库文件不会丢失
+    networks:
+      - mynetwork
+  redis:
+    image: redis:5.0.5
+    ports:
+      - &quot;6379:6379&quot;
+    networks:
+      - mynetwork
+# 创建网络，容器间共享网络
+networks:
+  mynetwork:
+    driver: bridge
+volumes:
+  dbdata:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Docker-运行"><a href="#Docker-运行" class="headerlink" title="Docker 运行"></a>Docker 运行</h2><ul>
+<li>运行容器</li>
 </ul>
-<h2 id="Cookies设置"><a href="#Cookies设置" class="headerlink" title="Cookies设置"></a>Cookies设置</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">cookies <span class="token operator">=</span> browser<span class="token punctuation">.</span>get_cookies<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">docker-compose build &amp; docker-compose up<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">browser<span class="token punctuation">.</span>add_cookies<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>浏览器运行</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">localhost:5555<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="获取源代码"><a href="#获取源代码" class="headerlink" title="获取源代码"></a>获取源代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">browser<span class="token punctuation">.</span>page_source<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<hr>
+<ul>
+<li>如果只想build frontend：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker-compose build frontend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<ul>
+<li>进入到容器内操作：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker exec -it container_id &#x2F;bin&#x2F;bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<ul>
+<li>查看当前运行的容器：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h2 id="Docker-私有仓库"><a href="#Docker-私有仓库" class="headerlink" title="Docker 私有仓库"></a>Docker 私有仓库</h2><h3 id="安装运行-docker-registry"><a href="#安装运行-docker-registry" class="headerlink" title="安装运行 docker-registry"></a>安装运行 docker-registry</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker run -d -p <span class="token number">5000</span>:5000 --restart<span class="token operator">=</span>always --name registry registry<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h3 id="在私有仓库上传、搜索、下载镜像"><a href="#在私有仓库上传、搜索、下载镜像" class="headerlink" title="在私有仓库上传、搜索、下载镜像"></a>在私有仓库上传、搜索、下载镜像</h3><p>创建好私有仓库之后，就可以使用 <code>docker tag</code> 来标记一个镜像，然后推送它到仓库。例如私有仓库地址为 <code>127.0.0.1:5000</code>。</p>
+<p>先在本机查看已有的镜像。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker image <span class="token function">ls</span>
+REPOSITORY                        TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu                            latest              ba5877dc9bec        <span class="token number">6</span> weeks ago         <span class="token number">192.7</span> MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">http:&#x2F;&#x2F;127.0.0.1:9997&#x2F;buy?event&#x3D;188254&amp;ticketId&#x3D;xxx&amp;need_select&#x3D;True&amp;ticketNum&#x3D;1&amp;select_num&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>使用 <code>docker tag</code> 将 <code>ubuntu:latest</code> 这个镜像标记为 <code>127.0.0.1:5000/ubuntu:latest</code>。</p>
+<p>格式为 <code>docker tag IMAGE[:TAG] [REGISTRY_HOST[:REGISTRY_PORT]/]REPOSITORY[:TAG]</code>。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker tag ubuntu:latest <span class="token number">127.0</span>.0.1:5000/ubuntu:latest
+$ docker image <span class="token function">ls</span>
+REPOSITORY                        TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu                            latest              ba5877dc9bec        <span class="token number">6</span> weeks ago         <span class="token number">192.7</span> MB
+<span class="token number">127.0</span>.0.1:5000/ubuntu:latest      latest              ba5877dc9bec        <span class="token number">6</span> weeks ago         <span class="token number">192.7</span> MB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>使用 <code>docker push</code> 上传标记的镜像。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ docker push <span class="token number">127.0</span>.0.1:5000/ubuntu:latest
+The push refers to repository <span class="token punctuation">[</span><span class="token number">127.0</span>.0.1:5000/ubuntu<span class="token punctuation">]</span>
+373a30c24545: Pushed
+a9148f5200b0: Pushed
+cdd3de0940ab: Pushed
+fc56279bbb33: Pushed
+b38367233d37: Pushed
+2aebd096e0e2: Pushed
+latest: digest: sha256:fe4277621f10b5026266932ddf760f5a756d2facd505a94d2da12f4f52f71f5a size: <span class="token number">1568</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="配置非-https-仓库地址"><a href="#配置非-https-仓库地址" class="headerlink" title="配置非 https 仓库地址"></a>配置非 https 仓库地址</h3><p>因为 Docker 默认不允许非 <code>HTTPS</code> 方式推送镜像。我们可以通过 Docker 的配置选项来取消这个限制.</p>
+<p><strong>Ubuntu 16.04+, Debian 8+, centos 7</strong></p>
+<p>对于使用 <code>systemd</code> 的系统，请在 <code>/etc/docker/daemon.json</code> 中写入如下内容（如果文件不存在请新建该文件）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>
+  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://hub-mirror.c.163.com"</span>,
+    <span class="token string">"https://mirror.baidubce.com"</span>
+  <span class="token punctuation">]</span>,
+  <span class="token string">"insecure-registries"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"192.168.199.100:5000"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">site:linkedin.com&#x2F;in&#x2F; AND &quot;python developer&quot; AND &quot;London&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -435,7 +654,7 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mingxin-yang.github.io/2022/12/30/python-selenium-shi-yong/">https://mingxin-yang.github.io/2022/12/30/python-selenium-shi-yong/</a>
+                    <a href="https://mingxin-yang.github.io/2023/10/18/docker-compose-vite-express/">https://mingxin-yang.github.io/2023/10/18/docker-compose-vite-express/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -473,8 +692,8 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/docker/">
+                                    <span class="chip bg-color">docker</span>
                                 </a>
                             
                         </div>
@@ -916,13 +1135,13 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/01/05/vite-da-bao-wen-ti/">
+                <a href="/2023/10/18/express-ji-cheng-swagger/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vite 打包问题">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Node express集成swagger，生成api文档">
                         
-                        <span class="card-title">Vite 打包问题</span>
+                        <span class="card-title">Node express集成swagger，生成api文档</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -933,7 +1152,7 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-18
                         </span>
                         <span class="publish-author">
                             
@@ -946,8 +1165,8 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vite/">
-                        <span class="chip bg-color">vite</span>
+                    <a href="/tags/node/">
+                        <span class="chip bg-color">node</span>
                     </a>
                     
                 </div>
@@ -961,13 +1180,13 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/28/linux-shi-yong-crontab-zhi-xing-ding-shi-ren-wu/">
+                <a href="/2023/01/10/git-geng-gai-yuan-cheng-cang-ku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Linux使用crontab执行定时任务">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="git 操作">
                         
-                        <span class="card-title">Linux使用crontab执行定时任务</span>
+                        <span class="card-title">git 操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -978,7 +1197,7 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-10
                             </span>
                         <span class="publish-author">
                             
@@ -991,8 +1210,8 @@ browser<span class="token punctuation">.</span>find_element<span class="token pu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
