@@ -1,234 +1,424 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="404, 小站">
-    <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="keywords" content="404, 小站" />
+  <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="renderer" content="webkit|ie-stand|ie-comp" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <title>Oil | 小站</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Oil | 小站</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+  <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css" />
+  <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css" />
+  <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css" />
+  <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/matery.css" />
+  <link rel="stylesheet" type="text/css" href="/css/my.css" />
 
-    <title>Home</title>
-    <script src="/libs/jquery/jquery.min.js"></script>
-    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-    <style>
-      #msg {
-        white-space: pre;
-      }
-    </style>
-  </head>
-  <body>
-    <main
-      className="flex min-h-screen flex-col items-center justify-between p-24"
-    >
-      <div style="padding:20px">
-        <div >表格文件示例：</div>
-        <img src="./example.png" alt="example" style="width: 50%; margin-top: 20px;" />
-        <div style="margin-top: 50px;">
+  <title>Home</title>
+  <script src="/libs/jquery/jquery.min.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"
+    integrity="sha512-dlPw+ytv/6JyepmelABrgeYgHI0O+frEwgfnPdXDTOIZz+eDgfW07QXG02/O8COfivBdGNINy+Vex+lYmJ5rxw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    #msg {
+      white-space: pre;
+    }
+    #wechat-pay-btn, #alipay-pay-btn {
+      cursor: pointer;
+    }
+  </style>
+</head>
 
+<body>
+  <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh">
+      <div>
+        <div style="margin-top: 50px; display: flex; flex-direction: column;">
           <input className="mt-10" type="file" id="fileInput" />
-          <button id="btn-down">下载Excel</button>
+          <button id="btn-down"  style="width: 200px; margin-top: 10px;">下载Excel</button>
         </div>
-        <div id="msg" style="margin-top: 50px;"></div>
+        <textarea id="msg" style="width: 100%; height: 300px; margin-top: 10px" placeholder="处理结果"></textarea>
+        <h1 style="color:dodgerblue;margin:10px 0px">Buy me a coffee!</h1>
+        <img src="https://img.shields.io/badge/WeChat-Pay-2d2d2d?style=flat-square&logo=wechat&logoColor=31b858" alt="wechat" id="wechat-pay-btn"/>
+        <img src="https://img.shields.io/badge/Alipay-Pay-2d2d2d?style=flat-square&logo=alipay&logoColor=328fdc" alt="alipay" id="alipay-pay-btn"/>
+        <img src="./reward/wechat.png" alt="wechat" style="width: 200px; margin-top: 10px; display: none;" id="wechat-pay"/>
+        <img src="./reward/alipay.png" alt="alipay" style="width: 200px; margin-top: 10px; display: none;" id="alipay-pay"/>
+        <div style="margin-top: 10px;">表格文件示例：</div>
+        <img src="./example.png" alt="example" style="margin-top: 10px; width:80% ; " />
       </div>
-    </main>
-  </body>
-  <script type="text/javascript">
-    const dataMap = {
-      保定: "保定南",
-      沧州: "沧州北",
-      承德: ["三岔口", "四合永"],
-      邯郸: "邯郸油库",
-      衡水: "衡水油库",
-      廊坊: null,
-      秦皇岛: ["西付店", "秦皇岛汇博寄外库"],
-      石家庄: "高庄",
-      唐山: "任各庄",
-      邢台: "邢台",
-      雄安: "保定南",
-      张家口: ["怀安代储库", "张家口中化寄外库"],
-    };
+    </div>
+  </main>
+</body>
+<script type="text/javascript">
+  const dataMap = {
+    保定: "保定南",
+    沧州: "沧州北",
+    承德: ["三岔口", "四合永"],
+    邯郸: "邯郸油库",
+    衡水: "衡水油库",
+    廊坊: null,
+    秦皇岛: ["西付店", "秦皇岛汇博寄外库"],
+    石家庄: "高庄",
+    唐山: "任各庄",
+    邢台: "邢台",
+    雄安: "保定南",
+    张家口: ["怀安代储库", "张家口中化寄外库"],
+  };
 
-    var dataOutTable = [];
+  var dataOutTable = [];
 
-    $(document).ready(function () {
-      $("#fileInput").on("change", function (e) {
-        let file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const dataDescStr = handleXLXS(e.target.result);
-          $("#msg").text(dataDescStr);
-          // delete input file
-          $("#fileInput").val("");
+  $(document).ready(function () {
+    $("#wechat-pay-btn").on("click", function (e) {
+      // 设置display为block
+      $("#wechat-pay").css("display", "block");
+      $("#alipay-pay").hide();
+    });
+    $("#alipay-pay-btn").on("click", function (e) {
+      $("#alipay-pay").css("display", "block");
+      $("#wechat-pay").hide();
+    });
+    $("#fileInput").on("change", function (e) {
+      let file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataDescStr = handleXLXS(e.target.result);
+        $("#msg").text(dataDescStr);
+        // delete input file
+        $("#fileInput").val("");
+      };
+      reader.readAsArrayBuffer(file);
+    });
+
+    $("#btn-down").on("click", function (e) {
+      toExcel();
+    });
+  });
+
+  const handleXLXS = (file) => {
+    console.log("handleXLXS");
+    dataOutTable = [];
+    const workbook = XLSX.read(file, {
+      type: "array",
+    });
+    const worksheet = workbook.Sheets["Sheet1"];
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+      header: 1,
+      range: 1,
+    });
+
+    console.log("jsonData: ", jsonData);
+
+    jsonData.forEach((item) => {
+      if (item[0] !== undefined) {
+        item[0] = item[0].replace("河北", "").replace("石油分公司", "");
+      }
+      if (item[1] !== undefined) {
+        item[1] = item[1].replace("河北", "").replace("油库", "");
+      }
+    });
+
+    const dataNotInMap = [];
+
+    for (let i = 0; i < jsonData.length; i++) {
+      const item = jsonData[i];
+      if (
+        item[1] !== undefined &&
+        item[0] === undefined &&
+        item[1] !== "(空白)" &&
+        item[1] !== "(空白)" &&
+        item[0] !== "总计"
+      ) {
+        item[0] = jsonData[i - 1][0];
+        if (
+          dataMap[item[0]] === null ||
+          (item[1] !== dataMap[item[0]] &&
+            !dataMap[item[0]].includes(item[1]))
+        ) {
+          if (
+            item[2] !== undefined ||
+            item[3] !== undefined ||
+            item[4] !== undefined
+          ) {
+            dataNotInMap.push(item);
+          }
+        }
+      }
+    }
+    let dataDescStr = "";
+
+    console.log("dataNotInMap: ", dataNotInMap);
+
+    for (let i = 0; i < dataNotInMap.length; i++) {
+      const item = dataNotInMap[i];
+      if (i > 0 && item[0] === dataNotInMap[i - 1][0]) {
+        if (item[1] == "大港") {
+          dataDescStr += `; 自${item[1]}油库跨省提`;
+        } else {
+          dataDescStr += `; 自${item[1]}油库跨区提`;
+        }
+      } else {
+        if (item[1] == "大港") {
+          dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
+              item[1]
+            }油库跨省提`;
+        } else {
+          dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
+              item[1]
+            }油库跨区提`;
+        }
+      }
+      if (item[2] !== undefined) {
+        dataDescStr += `柴油${turnUnit(item[2])}吨`;
+      }
+      if (item[3] !== undefined) {
+        if (dataDescStr[dataDescStr.length - 1] === "吨") {
+          dataDescStr += "，";
+        }
+        dataDescStr += `92#${turnUnit(item[3])}吨`;
+      }
+      if (item[4] !== undefined) {
+        if (dataDescStr[dataDescStr.length - 1] === "吨") {
+          dataDescStr += "，";
+        }
+        dataDescStr += `95#${turnUnit(item[4])}吨`;
+      }
+      if (
+        (i < dataNotInMap.length - 1 && item[0] !== dataNotInMap[i + 1][0]) ||
+        i === dataNotInMap.length - 1
+      ) {
+        dataDescStr += "。\n";
+      }
+      let sum = 0;
+      if (item[3] == undefined) {
+        sum = turnUnit(item[4]);
+      } else if (item[4] == undefined) {
+        sum = turnUnit(item[3]);
+      } else {
+        sum = turnUnit(item[3]) + turnUnit(item[4]);
+      }
+
+      dataOutTable.push([
+        item[0],
+        "河北" + item[1] + "油库",
+        sum,
+        turnUnit(item[3]),
+        turnUnit(item[4]),
+        undefined,
+        turnUnit(item[2]),
+      ]);
+    }
+
+    console.log("dataOutTable: ", dataOutTable);
+
+    return dataDescStr;
+  };
+
+  function toExcel() {
+    if (dataOutTable.length > 0) {
+      // 添加表头 到站所属单位	发站地址	汽油	92#汽油	95#汽油	爱跑98	柴油
+      dataOutTable.unshift([
+        "到站所属单位",
+        "发站地址",
+        "汽油",
+        "92#汽油",
+        "95#汽油",
+        "爱跑98",
+        "柴油",
+      ]);
+    } else {
+      alert("请先上传文件")
+    }
+    // const a = XLSX.utils.aoa_to_sheet(dataOutTable)
+    // // a["!ref"] = "A1:H8"
+    // // var mergeRange = { s: { r: 1, c: 0 }, e: { r: 7, c: 0 } }
+    // // var merge = [{s: mergeRange.s, e: mergeRange.e }]
+    // // a["!merges"] = merge
+    // // 如果一列相邻的行内容相同，合并单元格
+    // const merge = [];
+    // let mergeRange = { s: { r: 1, c: 0 }, e: { r: 1, c: 0 } };
+    // for (let i = 1; i < dataOutTable.length; i++) {
+    //   const item = dataOutTable[i];
+    //   if (item[0] === dataOutTable[i - 1][0]) {
+    //     mergeRange.e.r = i;
+    //   } else {
+    //     merge.push({ s: mergeRange.s, e: mergeRange.e });
+    //     mergeRange = { s: { r: i, c: 0 }, e: { r: i, c: 0 } };
+    //   }
+    // }
+    // merge.push({ s: mergeRange.s, e: mergeRange.e });
+    // a["!merges"] = merge;
+
+    // // 设置所有单元格文字居中
+    // for (let i = 0; i < dataOutTable.length; i++) {
+    //   const item = dataOutTable[i];
+    //   for (let j = 0; j < item.length; j++) {
+    //     const cellAddress = XLSX.utils.encode_cell({ r: i, c: j });
+    //     const cellObject = a[cellAddress];
+    //     cellObject.s = {
+    //       alignment: { horizontal: "center", vertical: "center" },
+    //     };
+    //   }
+    // }
+
+    // const style = {
+    //   alignment: { horizontal: 'center', vertical: 'center' },
+    //   border: { top: { style: 'thin' }, bottom: { style: 'thin' }, left: { style: 'thin' }, right: { style: 'thin' } }
+    // };
+    // // 设置单元格样式
+    // // const mergeCellAddress = XLSX.utils.encode_cell(mergeRange.s);
+    // // const mergeCellObject = worksheet[mergeCellAddress];
+    // // mergeCellObject.s = style;
+
+    // XLSX.writeFile({ SheetNames: ["Sheet1"], Sheets: { Sheet1: a } }, "test.xlsx")
+    // down a file
+
+    const workbook = new ExcelJS.Workbook();
+
+    // Create a worksheet
+    let worksheet = workbook.addWorksheet("Sheet 1");
+
+    // Add rows using the data array
+    dataOutTable.forEach((item, index) => {
+      let row = worksheet.addRow(item);
+
+      // Set alignment for each cell in the row
+      row.eachCell((cell) => {
+        cell.alignment = {
+          vertical: "middle",
+          horizontal: "center",
         };
-        reader.readAsArrayBuffer(file);
-      });
-
-      $("#btn-down").on("click", function (e) {
-        toExcel();
       });
     });
 
-    const handleXLXS = (file) => {
-      console.log("handleXLXS");
-      dataOutTable = [];
-      const workbook = XLSX.read(file, { type: "array" });
-      const worksheet = workbook.Sheets["Sheet1"];
-      const jsonData = XLSX.utils.sheet_to_json(worksheet, {
-        header: 1,
-        range: 1,
-      });
-
-      console.log("jsonData: ", jsonData)
-
-
-      jsonData.forEach((item) => {
-        if (item[0] !== undefined) {
-          item[0] = item[0].replace("河北", "").replace("石油分公司", "");
-        }
-        if (item[1] !== undefined) {
-          item[1] = item[1].replace("河北", "").replace("油库", "");
-        }
-      });
-
-      const dataNotInMap = [];
-
-      
-
-      for (let i = 0; i < jsonData.length; i++) {
-        const item = jsonData[i];
-        if (
-          item[1] !== undefined &&
-          item[0] === undefined &&
-          item[1] !== "(空白)" &&
-          item[1] !== "(空白)" &&
-          item[0] !== "总计"
-        ) {
-          item[0] = jsonData[i - 1][0];
-          if (
-            dataMap[item[0]] === null ||
-            (item[1] !== dataMap[item[0]] &&
-              !dataMap[item[0]].includes(item[1]))
-          ) {
-            if (
-              item[2] !== undefined ||
-              item[3] !== undefined ||
-              item[4] !== undefined
-            ) {
-              dataNotInMap.push(item);
-            }
-          }
-        }
-      }
-      let dataDescStr = "";
-
-      console.log("dataNotInMap: ", dataNotInMap);
-
-      for (let i = 0; i < dataNotInMap.length; i++) {
-        const item = dataNotInMap[i];
-        if (i > 0 && item[0] === dataNotInMap[i - 1][0]) {
-          if(item[1]=="大港"){
-            dataDescStr += `; 自${item[1]}油库跨省提`;
-          }else{
-            dataDescStr += `; 自${item[1]}油库跨区提`;
-          }
-        } else {
-          if(item[1]=="大港"){
-            dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
-              item[1]
-            }油库跨省提`;
-          }else{
-            dataDescStr += `${dataDescStr.split("\n").length}、${item[0]}：自${
-              item[1]
-            }油库跨区提`;
-          }
-        }
-        if (item[2] !== undefined) {
-          dataDescStr += `柴油${turnUnit(item[2])}吨`;
-        }
-        if (item[3] !== undefined) {
-          if (dataDescStr[dataDescStr.length - 1] === "吨") {
-            dataDescStr += "，";
-          }
-          dataDescStr += `92#${turnUnit(item[3])}吨`;
-        }
-        if (item[4] !== undefined) {
-          if (dataDescStr[dataDescStr.length - 1] === "吨") {
-            dataDescStr += "，";
-          }
-          dataDescStr += `95#${turnUnit(item[4])}吨`;
-        }
-        if (
-          (i < dataNotInMap.length - 1 &&
-            item[0] !== dataNotInMap[i + 1][0]) ||
-          i === dataNotInMap.length - 1
-        ) {
-          dataDescStr += "。\n";
-        }
-
-        dataOutTable.push([
-          item[0],
-          "河北" + item[1] + "油库",
-          turnUnit(item[3])+turnUnit(item[4]),
-          turnUnit(item[3]),
-          turnUnit(item[4]),
-          undefined,
-          turnUnit(item[2]),
-        ])
-      }
-
-      console.log("dataOutTable: ", dataOutTable)
-
-      return dataDescStr;
+    // 如果一列相邻的行内容相同，合并单元格
+    let mergeRange = {
+      s: {
+        r: 1,
+        c: 0,
+      },
+      e: {
+        r: 1,
+        c: 0,
+      },
     };
-
-    function toExcel() {
-      
-      const a = XLSX.utils.aoa_to_sheet(dataOutTable, { header: "日期	到站所属单位	发站地址	汽油	92#汽油	95#汽油	爱跑98	柴油".split(
-          "\t"
-        ) })
-      a["!ref"] = "A1:H8"
-      var mergeRange = { s: { r: 1, c: 0 }, e: { r: 7, c: 0 } }
-      var merge = [{s: mergeRange.s, e: mergeRange.e }]
-      a["!merges"] = merge
-      const style = {
-        alignment: { horizontal: 'center', vertical: 'center' },
-        border: { top: { style: 'thin' }, bottom: { style: 'thin' }, left: { style: 'thin' }, right: { style: 'thin' } }
-      };
-      // 设置单元格样式
-      const mergeCellAddress = XLSX.utils.encode_cell(mergeRange.s);
-      const mergeCellObject = worksheet[mergeCellAddress];
-      mergeCellObject.s = style;
-
-
-      XLSX.writeFile({ SheetNames: ["Sheet1"], Sheets: { Sheet1: a } }, "test.xlsx")
-      // down a file
-      return;
-    }
-
-    function turnUnit(value) {
-      if (value === undefined) {
-        return undefined;
+    for (let i = 1; i < dataOutTable.length; i++) {
+      const item = dataOutTable[i];
+      if (item[0] === dataOutTable[i - 1][0]) {
+        mergeRange.e.r = i;
+      } else {
+        try {
+          worksheet.mergeCells(
+            mergeRange.s.r + 1,
+            mergeRange.s.c + 1,
+            mergeRange.e.r + 1,
+            mergeRange.e.c + 1
+          );
+        } catch (e) {
+          console.log(e);
+        }
+        mergeRange = {
+          s: {
+            r: i,
+            c: 0,
+          },
+          e: {
+            r: i,
+            c: 0,
+          },
+        };
       }
-      return Math.round(value / 1000);
     }
-  </script>
+    try {
+      worksheet.mergeCells(
+        mergeRange.s.r + 1,
+        mergeRange.s.c + 1,
+        mergeRange.e.r + 1,
+        mergeRange.e.c + 1
+      );
+    } catch (e) {
+      console.log(e);
+    }
+
+    // Set the border style
+    var rowNumber = dataOutTable.length;
+    var columnNumber = dataOutTable[0].length;
+    for (let i = 1; i <= rowNumber; i++) {
+      for (let j = 1; j <= columnNumber; j++) {
+        worksheet.getCell(i, j).border = {
+          top: {
+            style: "thin",
+          },
+          bottom: {
+            style: "thin",
+          },
+          left: {
+            style: "thin",
+          },
+          right: {
+            style: "thin",
+          },
+        };
+      }
+    }
+
+
+
+    // Write to buffer and save the file to disk
+    let now = new Date();
+    let filename = `河北省${now.getMonth() + 1}月${now.getDate()}日油品运输计划.xlsx`;
+    workbook.xlsx
+      .writeBuffer()
+      .then((buffer) => {
+        saveAs(
+          new Blob([buffer], {
+            type: "application/octet-stream",
+          }),
+          filename
+        );
+      })
+      .catch((err) => console.log("Error writing excel export", err));
+
+  }
+
+  function saveAs(blob, filename) {
+    if (window.navigator.msSaveOrOpenBlob) {
+      navigator.msSaveBlob(blob, filename);
+    } else {
+      var link = document.createElement("a");
+      var body = document.querySelector("body");
+
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename;
+
+      // fix Firefox
+      link.style.display = "none";
+      body.appendChild(link);
+
+      link.click();
+      body.removeChild(link);
+
+      window.URL.revokeObjectURL(link.href);
+    }
+  }
+
+  function turnUnit(value) {
+    if (value === undefined) {
+      return undefined;
+    }
+    return Math.round(value / 1000);
+  }
+</script>
+
 </html>

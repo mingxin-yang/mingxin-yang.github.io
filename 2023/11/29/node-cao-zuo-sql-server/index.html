@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Node express集成swagger，生成api文档, 小站">
+    <meta name="keywords" content="Node使用Sql server数据库, 小站">
     <meta name="description" content="本网站是个人兴趣爱好，总结分享经验，记录生活点滴的平台，希望在以后的学习旅途中，走出自己的风景。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Node express集成swagger，生成api文档 | 小站</title>
+    <title>Node使用Sql server数据库 | 小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -203,12 +203,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Node express集成swagger，生成api文档</h1>
+                    <h1 class="description center-align post-title">Node使用Sql server数据库</h1>
                 </div>
             </div>
         </div>
@@ -340,7 +340,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-18
+                    2023-11-29
                 </div>
                 
 
@@ -349,14 +349,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    444
+                    255
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -379,125 +379,85 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Express-集成-Swagger"><a href="#Express-集成-Swagger" class="headerlink" title="Express 集成 Swagger"></a>Express 集成 Swagger</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><a target="_blank" rel="noopener" href="https://github.com/BRIKEV/express-jsdoc-swagger">express-jsdoc-swagger</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">npm</span> i express-jsdoc-swagger<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="node操作sql-server"><a href="#node操作sql-server" class="headerlink" title="node操作sql server"></a>node操作sql server</h1><h2 id="安装sql-server"><a href="#安装sql-server" class="headerlink" title="安装sql server"></a>安装sql server</h2><ol>
+<li>Mac上没有sql server，需要在docker中使用image。</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">docker run -e &quot;ACCEPT_EULA&#x3D;Y&quot; -e &quot;MSSQL_SA_PASSWORD&#x3D;yourStrong(!)Password&quot; -p 1433:1433 -d mcr.microsoft.com&#x2F;mssql&#x2F;server:2022-latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="集成步骤"><a href="#集成步骤" class="headerlink" title="集成步骤"></a>集成步骤</h2><ol>
-<li><p>创建 <code>swaggerOption.js</code>文件</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  info<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    version<span class="token operator">:</span> <span class="token string">'1.0.0'</span><span class="token punctuation">,</span>
-    title<span class="token operator">:</span> <span class="token string">'Albums store'</span><span class="token punctuation">,</span>
-    description<span class="token operator">:</span>
-      <span class="token string">"description"</span><span class="token punctuation">,</span>
-    termsOfService<span class="token operator">:</span> <span class="token string">"http:///terms/"</span><span class="token punctuation">,</span>
-    contact<span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"Support"</span><span class="token punctuation">,</span> <span class="token string">"email"</span><span class="token operator">:</span> <span class="token string">""</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    license<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      name<span class="token operator">:</span> <span class="token string">'MIT'</span><span class="token punctuation">,</span>
-      url<span class="token operator">:</span> <span class="token string">"http://www.apache.org/licenses/LICENSE-2.0.html"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token comment">// 设置basicAuth</span>
-  security<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    BasicAuth<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      type<span class="token operator">:</span> <span class="token string">'http'</span><span class="token punctuation">,</span>
-      scheme<span class="token operator">:</span> <span class="token string">'basic'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token comment">// 设置bearerAuth</span>
-  <span class="token comment">//security: &#123;</span>
-  <span class="token comment">//   bearerAuth: &#123;</span>
-  <span class="token comment">//     type: 'http', </span>
-  <span class="token comment">//     scheme: "bearer"</span>
-  <span class="token comment">//   &#125;,</span>
-  <span class="token comment">//&#125;,</span>
-  <span class="token comment">// Base directory which we use to locate your JSDOC files</span>
-  baseDir<span class="token operator">:</span> __dirname<span class="token punctuation">,</span>
-  <span class="token comment">// Glob pattern to find your jsdoc files (multiple patterns can be added in an array)</span>
-  filesPattern<span class="token operator">:</span> <span class="token string">'./**/*.js'</span><span class="token punctuation">,</span>
-  <span class="token comment">// URL where SwaggerUI will be rendered</span>
-  swaggerUIPath<span class="token operator">:</span> <span class="token string">'/api-docs'</span><span class="token punctuation">,</span>
-  <span class="token comment">// Expose OpenAPI UI</span>
-  exposeSwaggerUI<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token comment">// Expose Open API JSON Docs documentation in `apiDocsPath` path.</span>
-  exposeApiDocs<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token comment">// Open API JSON Docs endpoint.</span>
-  apiDocsPath<span class="token operator">:</span> <span class="token string">'/v3/api-docs'</span><span class="token punctuation">,</span>
-  <span class="token comment">// Set non-required fields as nullable by default</span>
-  notRequiredAsNullable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token comment">// You can customize your UI options.</span>
-  <span class="token comment">// you can extend swagger-ui-express config. You can checkout an example of this</span>
-  <span class="token comment">// in the `example/configuration/swaggerOptions.js`</span>
-  swaggerUiOptions<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token comment">// multiple option in case you want more that one instance</span>
-  multiple<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> options<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>在<code>app.js</code>中引入</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token function">expressJSDocSwagger</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./swaggerOption.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>api 注释使用</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
- * QueryProductList
- * @typedef &#123;object&#125; QueryProductList
- * @property &#123;string&#125; accountId - accountId
- * @property &#123;string&#125; sort      - list by sort
- * @property &#123;string&#125; page.required - page number
- * @property &#123;string&#125; limit.required -number per page
- */</span>
-<span class="token comment">/**
- * @typedef &#123;object&#125;ProductListResponse
- * @property &#123;Array.&lt;InsertProduct>&#125; products - 产品列表数据
- * @property &#123;number&#125; totalCount - 总计数
- * @property &#123;number&#125; page - 当前页码
- * @property &#123;number&#125; pageSize - 每页大小
- */</span>
-<span class="token comment">/**
- * post /product/lists
- * @tags Product
- * @description get products list
- * @summary products list
- * @security bearerAuth
- * @param &#123;QueryProductList&#125; request.body.required - query info - application/json
- * @return &#123;ProductListResponse&#125; 200 - successful operation
- * @return &#123;object&#125; 400 - Bad Request
- * @example request - example JSON format
- * &#123;
- * "accountId": "",
- * "sort": &#123;
- *    "cdate":-1
- * &#125;,
- * "page":1,
- * "limit":1
- * &#125;
- * @example response - 400 - example JSON format
- * &#123;
- * "statusCode": 400,
- * "msg": "Error Message",
- * "result":null
- * &#125;
- * @example response - 200 - example JSON format
- * &#123;
- * "statusCode": 200,
- * "msg": "",
- * "result":&#123; 
- *    "products":[]
- * &#125;
- * &#125;
- */</span>
-app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/api/v1'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  success<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>QueryProductList 为 component 对象</li>
-<li>数组使用array<string>或者array<object></li>
-<li>注意@example中的例子要json格式正确，否则会报错</li>
-</ul>
+<ol start="2">
+<li><p>客户端</p>
+<ol>
+<li><p>SQLPro for MSSQL</p>
 </li>
-<li><p>在vscode中使用插件</p>
-<p><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=brikev.express-jsdoc-swagger-snippets">express-jsdoc-swagger-snippets</a></p>
+<li><p>连接本地server</p>
+<p>* 默认login name为sa</p>
+</li>
+</ol>
+<img src="/Users/fourmol/AndroidDev/hexo-blog/source/_posts/img_v3_025l_4344bc4c-2396-4075-b65a-0400c5d6d47g.jpg" alt="img_v3_025l_4344bc4c-2396-4075-b65a-0400c5d6d47g" style="zoom:50%;" /></li>
+<li><p>node 连接 sql server</p>
+<ul>
+<li><p>安装mssql（<a target="_blank" rel="noopener" href="https://github.com/tediousjs/node-mssql%EF%BC%89">https://github.com/tediousjs/node-mssql）</a></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> mssql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>连接</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> sql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"mssql"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> sqlConfig <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  user<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DB_USER</span><span class="token punctuation">,</span>
+  password<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DB_PWD</span><span class="token punctuation">,</span>
+  database<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DB_NAME</span><span class="token punctuation">,</span>
+  server<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DB_HOST</span><span class="token punctuation">,</span>
+  pool<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    max<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    min<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    idleTimeoutMillis<span class="token operator">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  parseJSON<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  options<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    encrypt<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// for azure</span>
+    trustServerCertificate<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// change to true for local dev / self-signed certs</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sqlConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">connect</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// make sure that any items are correctly URL encoded in the connection string</span>
+    <span class="token keyword">await</span> sql<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>sqlConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ... error checks</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>query</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+ <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// make sure that any items are correctly URL encoded in the connection string</span>
+  <span class="token keyword">await</span> sql<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>sqlConfig<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> sql<span class="token punctuation">.</span>query<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">select * from mytable where id = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>value<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+  console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+ <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// ... error checks</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>sql.query查询的结果的结构：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
+	recordsets<span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">[</span>
+			<span class="token punctuation">&#123;</span>
+				<span class="token constant">COL1</span><span class="token operator">:</span> <span class="token string">"some content"</span><span class="token punctuation">,</span>
+				<span class="token constant">COL2</span><span class="token operator">:</span> <span class="token string">"some more content"</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">]</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	recordset<span class="token operator">:</span> <span class="token punctuation">[</span>
+		<span class="token punctuation">&#123;</span>
+			<span class="token constant">COL1</span><span class="token operator">:</span> <span class="token string">"some content"</span><span class="token punctuation">,</span>
+			<span class="token constant">COL2</span><span class="token operator">:</span> <span class="token string">"some more content"</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	output<span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	rowsAffected<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
 </li>
 </ol>
 
@@ -526,7 +486,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mingxin-yang.github.io/2023/10/18/express-ji-cheng-swagger/">https://mingxin-yang.github.io/2023/10/18/express-ji-cheng-swagger/</a>
+                    <a href="https://mingxin-yang.github.io/2023/11/29/node-cao-zuo-sql-server/">https://mingxin-yang.github.io/2023/11/29/node-cao-zuo-sql-server/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1003,17 +963,18 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/10/zhao-hui-mi-ma/">
+                <a href="/2023/11/29/node-cao-zuo-sql-server/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="忘记密码功能设计">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Node使用Sql server数据库">
                         
-                        <span class="card-title">忘记密码功能设计</span>
+                        <span class="card-title">Node使用Sql server数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1023,9 +984,9 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1034,6 +995,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1052,13 +1014,13 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/18/docker-compose-vite-express/">
+                <a href="/2023/11/10/windows-server-2019-an-zhuang-docker-he-docker-compose/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="docker-compose 项目实践">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Windows Server 2019 安装 docker">
                         
-                        <span class="card-title">docker-compose 项目实践</span>
+                        <span class="card-title">Windows Server 2019 安装 docker</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1069,7 +1031,7 @@ app<span class="token punctuation">.</span><span class="token function">get</spa
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
                             </span>
                         <span class="publish-author">
                             
