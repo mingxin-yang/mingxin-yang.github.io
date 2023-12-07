@@ -35,7 +35,9 @@
     #msg {
       white-space: pre;
     }
-    #wechat-pay-btn, #alipay-pay-btn {
+
+    #wechat-pay-btn,
+    #alipay-pay-btn {
       cursor: pointer;
     }
   </style>
@@ -47,14 +49,18 @@
       <div>
         <div style="margin-top: 50px; display: flex; flex-direction: column;">
           <input className="mt-10" type="file" id="fileInput" />
-          <button id="btn-down"  style="width: 200px; margin-top: 10px;">下载Excel</button>
+          <button id="btn-down" style="width: 200px; margin-top: 10px;">下载Excel</button>
         </div>
         <textarea id="msg" style="width: 100%; height: 300px; margin-top: 10px" placeholder="处理结果"></textarea>
         <h1 style="color:dodgerblue;margin:10px 0px">Buy me a coffee!</h1>
-        <img src="https://img.shields.io/badge/WeChat-Pay-2d2d2d?style=flat-square&logo=wechat&logoColor=31b858" alt="wechat" id="wechat-pay-btn"/>
-        <img src="https://img.shields.io/badge/Alipay-Pay-2d2d2d?style=flat-square&logo=alipay&logoColor=328fdc" alt="alipay" id="alipay-pay-btn"/>
-        <img src="./reward/wechat.png" alt="wechat" style="width: 200px; margin-top: 10px; display: none;" id="wechat-pay"/>
-        <img src="./reward/alipay.png" alt="alipay" style="width: 200px; margin-top: 10px; display: none;" id="alipay-pay"/>
+        <img src="https://img.shields.io/badge/WeChat-Pay-2d2d2d?style=flat-square&logo=wechat&logoColor=31b858"
+          alt="wechat" id="wechat-pay-btn" />
+        <img src="https://img.shields.io/badge/Alipay-Pay-2d2d2d?style=flat-square&logo=alipay&logoColor=328fdc"
+          alt="alipay" id="alipay-pay-btn" />
+        <img src="./reward/wechat.png" alt="wechat" style="width: 200px; margin-top: 10px; display: none;"
+          id="wechat-pay" />
+        <img src="./reward/alipay.png" alt="alipay" style="width: 200px; margin-top: 10px; display: none;"
+          id="alipay-pay" />
         <div style="margin-top: 10px;">表格文件示例：</div>
         <img src="./example.png" alt="example" style="margin-top: 10px; width:80% ; " />
       </div>
@@ -76,6 +82,10 @@
     雄安: "保定南",
     张家口: ["怀安代储库", "张家口中化寄外库"],
   };
+
+  // 获取value list, value 为数组的话，...展开
+  const valueList = Object.values(dataMap).flat();
+  // console.log("valueList: ", valueList);
 
   var dataOutTable = [];
 
@@ -209,9 +219,15 @@
         sum = turnUnit(item[3]) + turnUnit(item[4]);
       }
 
+      var item1 = "";
+      if (valueList.includes(item[1])) {
+        item1 = "河北" + item[1] + "油库";
+      } else {
+        item1 = item[1] + "油库";
+      }
       dataOutTable.push([
         item[0],
-        "河北" + item[1] + "油库",
+        item1,
         sum,
         turnUnit(item[3]),
         turnUnit(item[4]),
@@ -228,15 +244,17 @@
   function toExcel() {
     if (dataOutTable.length > 0) {
       // 添加表头 到站所属单位	发站地址	汽油	92#汽油	95#汽油	爱跑98	柴油
-      dataOutTable.unshift([
-        "到站所属单位",
-        "发站地址",
-        "汽油",
-        "92#汽油",
-        "95#汽油",
-        "爱跑98",
-        "柴油",
-      ]);
+      if(dataOutTable[0][0] != "到站所属单位"){
+        dataOutTable.unshift([
+          "到站所属单位",
+          "发站地址",
+          "汽油",
+          "92#汽油",
+          "95#汽油",
+          "爱跑98",
+          "柴油",
+        ]);
+      }
     } else {
       alert("请先上传文件")
     }
@@ -313,12 +331,18 @@
         c: 0,
       },
     };
-    for (let i = 1; i < dataOutTable.length; i++) {
-      const item = dataOutTable[i];
-      if (item[0] === dataOutTable[i - 1][0]) {
+    for (let i = 2; i < dataOutTable.length + 1; i++) {
+      if (i < dataOutTable.length && dataOutTable[i][0] === dataOutTable[i - 1][0]) {
+        console.log("i: ", i);
         mergeRange.e.r = i;
       } else {
         try {
+          let sr = mergeRange.s.r + 1;
+          let sc = mergeRange.s.c + 1;
+          let er = mergeRange.e.r + 1;
+          let ec = mergeRange.e.c + 1;
+          console.log(sr, sc, er, ec);
+          console.log(`合并第${sr}行，第${sc}列至第${er}行，第${ec}列`)
           worksheet.mergeCells(
             mergeRange.s.r + 1,
             mergeRange.s.c + 1,
@@ -340,16 +364,16 @@
         };
       }
     }
-    try {
-      worksheet.mergeCells(
-        mergeRange.s.r + 1,
-        mergeRange.s.c + 1,
-        mergeRange.e.r + 1,
-        mergeRange.e.c + 1
-      );
-    } catch (e) {
-      console.log(e);
-    }
+    // try {
+    //   worksheet.mergeCells(
+    //     mergeRange.s.r + 1,
+    //     mergeRange.s.c + 1,
+    //     mergeRange.e.r + 1,
+    //     mergeRange.e.c + 1
+    //   );
+    // } catch (e) {
+    //   console.log(e);
+    // }
 
     // Set the border style
     var rowNumber = dataOutTable.length;
